@@ -1,0 +1,220 @@
+.stowzy_user_login {
+  background-image: url("/assets/images/login-user/login-user-1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.stowzy_user_login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.section-login .stowzy_user_login .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.stowzy_user_login .container .main_Containt {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.left_side {
+  color: whitesmoke;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.left_side h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.left_side p {
+  font-size: 1.2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.left_side .stowzy_content .stowzy_content_mobile {
+  display: none;
+}
+.left_side .stowzy_content .stowzy_content_desktop {
+  display: block;
+  margin-top: 1.2rem;
+}
+
+.right_side {
+  padding: 40px 30px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.174);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: black;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+
+form .form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  border-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+form .stowzy_sign_up_account {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: black;
+}
+
+form p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+form p a:hover {
+  text-decoration: underline;
+}
+
+form .login_corporate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form .login_corporate .login_corporate_left {
+  margin-bottom: 6px;
+  border-bottom: 1px solid white;
+  width: 26px;
+  margin-right: 6px;
+}
+form .login_corporate .login_corporate_middle {
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.16;
+  color: black;
+}
+form .login_corporate .login_corporate_right {
+  margin-bottom: 6px;
+  border-bottom: 1px solid white;
+  flex-grow: 1;
+  margin-left: 6px;
+}
+
+.login_externalLink a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login_externalLink a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for Tablets and smaller screens */
+@media (max-width: 1024px) {
+  .stowzy_user_login .container .main_Containt {
+    flex-direction: column;
+  }
+
+  .left_side {
+    padding: 40px 20px 0px;
+    text-align: center;
+  }
+
+  .right_side {
+    padding: 20px;
+  }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  .left_side h3 {
+    font-size: 2rem;
+  }
+
+  .stowzy_user_login {
+    align-items: flex-start;
+  }
+
+  .left_side .stowzy_content .stowzy_content_desktop {
+    display: none;
+  }
+  .left_side .stowzy_content .stowzy_content_mobile {
+    display: block;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  form h3 {
+    font-size: 1.5rem;
+  }
+
+  form .form-control,
+  form button {
+    font-size: 0.9rem;
+  }
+}

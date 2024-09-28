@@ -1,1 +1,130 @@
-<button class="btn btn-primary">nav works!</button>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" aria-label="Offcanvas navbar middle">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <!-- Home -->
+                        <li class="nav-item px-1">
+                            <a class="nav-link active" routerLink="/" routerLinkActive="active" aria-current="page">Home</a>
+                        </li>
+                    
+                        <!-- Find Rooms Dropdown -->
+                        <li class="nav-item dropdown px-1 focus-ring">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Find Rooms</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">By City</a></li>
+                                <li><a class="dropdown-item" href="#">By Price Range</a></li>
+                                <li><a class="dropdown-item" href="#">By Property Type</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Offers Dropdown -->
+                        <li class="nav-item dropdown px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Offers</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Current Deals</a></li>
+                                <li><a class="dropdown-item" href="#">Long-Stay Discounts</a></li>
+                                <li><a class="dropdown-item" href="#">Group Booking Discounts</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Host Your Property Dropdown -->
+                        <li class="nav-item dropdown px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Host Your Property</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Sign Up to Host</a></li>
+                                <li><a class="dropdown-item" href="#">How to Host</a></li>
+                                <li><a class="dropdown-item" href="#">Manage Property</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Bookings Dropdown -->
+                        <li class="nav-item dropdown px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Bookings</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Current Bookings</a></li>
+                                <li><a class="dropdown-item" href="#">Booking History</a></li>
+                                <li><a class="dropdown-item" href="#">Cancel Booking</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Profile Dropdown (Visible after login) -->
+                        <li class="nav-item dropdown d-none px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Profile</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">My Account</a></li>
+                                <li><a class="dropdown-item" href="#">Booking History</a></li>
+                                <li><a class="dropdown-item" href="#">Saved Properties</a></li>
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Help Dropdown -->
+                        <li class="nav-item dropdown px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Help</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">FAQs</a></li>
+                                <li><a class="dropdown-item" href="#">Contact Support</a></li>
+                                <li><a class="dropdown-item" href="#">Cancellation Policy</a></li>
+                            </ul>
+                        </li>
+                    
+                        <!-- Login/Sign Up Dropdown -->
+                        <li class="nav-item dropdown px-1">
+                            <a class="nav-link d-flex justify-content-between" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu_name">Login/Sign Up</div>
+                                <div class="header_item ms-2">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</a></li>
+                                <li><a class="dropdown-item" routerLink="/signup" routerLinkActive="active">Sign Up</a></li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
