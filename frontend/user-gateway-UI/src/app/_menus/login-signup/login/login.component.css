@@ -49,11 +49,13 @@
   margin-bottom: 10px;
   font-weight: 900;
   font-family: "Times New Roman", Times, serif;
+  color: whitesmoke;
 }
 
-.left_side p {
+.left_side span {
   font-size: 1.2rem;
   font-family: "Times New Roman", Times, serif;
+  color: #848FA5;
 }
 
 .left_side .stowzy_content .stowzy_content_mobile {

@@ -1,0 +1,312 @@
+/* Section 1 - Navbar */
+
+.rounded-circle {
+  max-height: 45px;
+  /* border-radius: 1px solid red !important; */
+}
+
+.navbar-section {
+  background-color: var(--primary-color); 
+}
+.nav-color {
+  background-color:var(--primary-color);
+}
+
+.navbar-section .navbar-brand {
+  font-size: 1.5em;
+  color: #fff; 
+}
+
+.navbar-section .nav-link {
+  font-size: 1.1em;
+  color: var(--secondary-color); 
+}
+
+.navbar-section .nav-link.active {
+  color: #fff; 
+}
+
+/* Section 2 - Room Owners Welcome */
+.owner-welcome-section {
+  background-color: var(--background-color); 
+}
+
+.owner-welcome-section .text-heading {
+  color: var(--primary-color); 
+}
+
+.owner-welcome-section .text-para {
+  color: var(--text-color); 
+}
+
+/* Section 3 - Unlock Your Space's Potential */
+.space-potential-section {
+  background-color: var(--background-color); 
+}
+
+.space-potential-section .text-heading {
+  color: var(--primary-color); 
+}
+
+.space-potential-section .text-para {
+  color: var(--text-color); 
+}
+
+.space-potential-section img {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Common Styles */
+.container {
+  margin: 0 auto;
+}
+
+.text-container {
+  padding: 4rem;
+}
+
+.text-heading {
+  font-weight: bold;
+  font-size: 2.5em;
+  color: var(--primary-color); 
+}
+
+.text-para {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: var(--text-color); 
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .text-heading {
+    font-size: 1.8em;
+  }
+
+  .text-para {
+    font-size: 1em;
+  }
+
+  .text-container {
+    padding: 2rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .cities-heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .image-container img {
+    width: 250px;
+    height: 150px;
+  }
+
+  .city-name {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Our Popular Cities */
+.popular-cities-section {
+  background-color: var(--background-color); 
+  padding: 40px 20px;
+}
+
+.cities-heading h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color); 
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.cities-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.city-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.marquee-item:hover .image-container {
+  transform: scale(1.05);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .cities-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .image-container img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .city-name {
+    font-size: 12px;
+  }
+}
+
+/* Benefits Section */
+#benefits {
+  background-color: var(--background-color);
+  padding: 40px 0;
+}
+
+#benefits h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  #benefits h2 {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+}
+/* exploremore_footer */
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.footer h5 {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.footer a {
+  color: var(--background-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: var(--secondary-color) !important;
+}
+.footer i {
+  margin-right: 10px;
+}
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .text-center {
+    text-align: center !important;
+  }
+  .footer .text-md-left {
+    text-align: center;
+  }
+  .footer .d-flex {
+    justify-content: center;
+  }
+}

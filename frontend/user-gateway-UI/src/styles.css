@@ -11,3 +11,14 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+
+
+:root {
+  --primary-color: #1D3461; /* Dark Blue */
+  --secondary-color: #FFA500; /* Soft Orange */
+  --background-color: rgba(255, 255, 255, 0.847);  /* Light Gray */
+  --text-color: #333; /* Darker Gray for readability */
+}
+
+
+

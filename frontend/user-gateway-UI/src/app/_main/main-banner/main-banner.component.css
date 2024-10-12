@@ -1,4 +1,4 @@
-.bg-img-1 {
+/* .bg-img-1 {
   background-image: url("/assets/images/carousel-images/carousel-image-1.jpg");
 }
 
@@ -15,4 +15,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+} */
+
+.carousel-item{
+  height: 100vh;
 }

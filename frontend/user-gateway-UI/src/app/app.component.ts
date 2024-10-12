@@ -16,18 +16,18 @@ export class AppComponent implements OnInit {
   httpClient = inject(HttpClient);
 
   ngOnInit(): void {
-    this.httpClient
-      .post('https://localhost:5001/api/GuestUser/hii', {})
-      .subscribe({
-        next: (response) => {
-          console.log('next', response);
-        },
-        error: (error) => {
-          console.log('err', error);
-        },
-        complete: () => {
-          console.log('complete');
-        },
-      });
+    // this.httpClient
+    //   .post('https://localhost:5001/api/GuestUser/hii', {})
+    //   .subscribe({
+    //     next: (response) => {
+    //       console.log('next', response);
+    //     },
+    //     error: (error) => {
+    //       console.log('err', error);
+    //     },
+    //     complete: () => {
+    //       console.log('complete');
+    //     },
+    //   });
   }
 }

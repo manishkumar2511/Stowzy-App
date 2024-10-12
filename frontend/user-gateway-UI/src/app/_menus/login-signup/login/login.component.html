@@ -36,9 +36,7 @@
                 required
               />
             </div>
-            <div
-              class="form-group d-flex justify-content-between mb-3"
-            >
+            <div class="form-group d-flex justify-content-between mb-3">
               <div class="form-check float-start">
                 <input
                   class="form-check-input"
@@ -60,7 +58,8 @@
               Login
             </button>
             <p class="text-center stowzy_sign_up_account mt-3">
-              Don't have an account? <a href="#">Sign Up</a>
+              Don't have an account?
+              <a routerLink="/signup" routerLinkActive="active">Sign Up</a>
             </p>
 
             <div class="login_corporate text-left">
@@ -69,7 +68,10 @@
               <div class="login_corporate_right"></div>
             </div>
             <div class="login_externalLink mt-2">
-              <a class="loginCard__extraUrl" href="#"
+              <a
+                class="loginCard__extraUrl"
+                routerLink="/room-owner-login"
+                routerLinkActive="active"
                 >Corporate
                 <i class="fa-solid fa-angle-right"></i>
               </a>
