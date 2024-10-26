@@ -1,0 +1,67 @@
+/* Font styling for the entire form */
+.Personal-Details {
+  font-family: 'Roboto', sans-serif; 
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Style for required field asterisk */
+.Personal-Details .asterisk {
+  color: #C14953; 
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 2px; 
+}
+
+
+/* Label Styling */
+.Personal-Details label {
+  font-weight: 600; 
+  font-size: 14px;  
+  color: #4C4C47;  
+}
+
+/* Input field styling */
+.Personal-Details input,
+.Personal-Details select {
+  font-size: 16px;  
+  font-weight: 400; 
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Placeholder size */
+.Personal-Details input::placeholder,
+.Personal-Details select.form-select {
+  font-size: 14px; 
+}
+
+
+/* Error Message Styling */
+.Personal-Details .error {
+  font-size: 12px;   
+  color: #C14953;   
+  display: block;
+  margin-top: 7px;
+
+}
+
+/* Button styling */
+.Personal-Details button {
+  font-weight: 500; 
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #2D2D2A; 
+  color: #fff;    
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.Personal-Details button:hover {
+  background-color: #4C4C47; 
+}
+
+

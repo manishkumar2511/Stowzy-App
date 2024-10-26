@@ -18,7 +18,7 @@
         </div>
         <div class="right_side">
           <!-- Login form -->
-          <form>
+          <form class="userLoginForm">
             <h3>Login to Your Account</h3>
             <div class="form-group">
               <input
@@ -50,7 +50,12 @@
               </div>
               <div class="float-end">
                 <span class="text-center mt-3">
-                  <a href="#">Forgot Password</a>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#userForgotPasswordModal"
+                    >Forgot Password</a
+                  >
                 </span>
               </div>
             </div>
@@ -59,7 +64,12 @@
             </button>
             <p class="text-center stowzy_sign_up_account mt-3">
               Don't have an account?
-              <a routerLink="/signup" routerLinkActive="active">Sign Up</a>
+              <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#userSignUpModal"
+                >Sign Up</a
+              >
             </p>
 
             <div class="login_corporate text-left">
@@ -82,3 +92,201 @@
     </div>
   </div>
 </div>
+
+<section class="user-forgot-password-model">
+  <div
+    class="modal fade"
+    id="userForgotPasswordModal"
+    tabindex="-1"
+    aria-labelledby="userForgotPasswordModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-white">
+          <h5 class="modal-title" id="userForgotPasswordModalLabel">
+            Forgot Password
+          </h5>
+          <button
+            type="button"
+            id="model-btn-close"
+            class="btn-close d-none d-md-block"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form>
+            <!-- Mobile Number Input -->
+            <div class="form-group mt-3">
+              <label for="mobileNumber" class="form-label">Mobile Number</label>
+              <input
+                type="text"
+                id="mobileNumber"
+                class="form-control"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+            <!-- Mobile OTP Button and Input -->
+            <div class="mt-2">
+              <div class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary w-50"
+                  id="mobileOtpBtn"
+                >
+                  Get mobile OTP
+                </button>
+                <input
+                  type="text"
+                  id="mobileOtp"
+                  class="form-control w-50 ms-1"
+                  placeholder="Enter mobile OTP"
+                />
+              </div>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group mt-2">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <!-- Confirm Password Input -->
+            <div class="form-group mt-2">
+              <label for="cnfmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="cnfmPassword"
+                class="form-control"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-outline-primary w-100 mt-2">
+              Reset Password
+            </button>
+          </form>
+        </div>
+        <!-- Close Button for Small Screens -->
+        <div class="text-center mb-3">
+          <button
+            type="button"
+            id="model-btn-close1"
+            class="btn btn-secondary d-md-none"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="user-signUp-model">
+  <div
+    class="modal fade"
+    id="userSignUpModal"
+    tabindex="-1"
+    aria-labelledby="userSignUpModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-white">
+          <h5 class="modal-title" id="userSignUpModalLabel">Create Account</h5>
+          <button
+            type="button"
+            id="model-btn-close"
+            class="btn-close d-none d-md-block"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form>
+            <!-- Mobile Number Input -->
+            <div class="form-group">
+              <label for="mobileNumber" class="form-label">Mobile Number</label>
+              <input
+                type="text"
+                id="mobileNumber"
+                class="form-control"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+            <!-- Mobile OTP Button and Input -->
+            <div class="mt-2">
+              <div class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary w-50"
+                  id="mobileOtpBtn"
+                >
+                  Get mobile OTP
+                </button>
+                <input
+                  type="text"
+                  id="mobileOtp"
+                  class="form-control w-50 ms-1"
+                  placeholder="Enter mobile OTP"
+                />
+              </div>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group mt-2">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <!-- Confirm Password Input -->
+            <div class="form-group mt-2">
+              <label for="cnfmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="cnfmPassword"
+                class="form-control"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-outline-primary w-100 mt-2">
+              Login
+            </button>
+          </form>
+        </div>
+        <!-- Close Button for Small Screens -->
+        <div class="text-center mb-3">
+          <button
+            type="button"
+            id="model-btn-close1"
+            class="btn btn-secondary d-md-none"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

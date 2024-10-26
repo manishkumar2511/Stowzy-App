@@ -1,0 +1,168 @@
+<div class="container p-0">
+  <div class="card">
+    <div class="card-header bg-dark text-white text-center p-4">
+      <h2 class="mb-0">Personal Details</h2>
+    </div>
+    <div class="card-body p-3 bg-light">
+      <form [formGroup]="stepOneForm" (ngSubmit)="stepOneSubmit()" autocomplete="off" novalidate #formRef="ngForm" class="Personal-Details">
+
+        <!-- Title && First Name -->
+        <div class="row">
+          <div class="col-md-6 mb-1">
+            <label for="titleName" class="form-label ps-1">Title<span class="asterisk">*</span></label>
+            <select class="form-select" id="titleName" formControlName="title" aria-label="Default select example">
+              <option value="">Select Title</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+            </select>
+            <span class="error" *ngIf="stepOneForm.controls['title'].hasError('required') && formRef.submitted">Please select a title</span>
+          </div>
+          <div class="col-md-6 mb-1">
+            <label for="fname" class="form-label ps-1">First Name<span class="asterisk">*</span></label>
+            <input type="text" class="form-control" id="fname" formControlName="firstName" placeholder="Enter First Name" />
+            <span class="error" *ngIf="stepOneForm.controls['firstName'].hasError('required') && formRef.submitted">Please enter first name</span>
+            <span class="error" *ngIf="stepOneForm.controls['firstName'].hasError('minlength') && formRef.submitted">
+              First name must be at least 2 characters
+            </span>
+            <span class="error" *ngIf="stepOneForm.controls['firstName'].hasError('maxlength') && formRef.submitted">
+              First name cannot exceed 30 characters
+            </span>
+            <span class="error" *ngIf="stepOneForm.controls['firstName'].hasError('pattern') && formRef.submitted">
+              First name can only contain letters and spaces
+            </span>
+          </div>
+        </div>
+        <!-- Last Name && Date of Birth-->
+        <div class="row">
+          <div class="col-md-6 mb-1">
+            <label for="lname" class="form-label ps-1">Last Name</label>
+            <input type="text" class="form-control" id="lname" formControlName="lastName" placeholder="Enter Last Name" />
+          </div>
+          <div class="col-md-6 mb-1">
+            <label for="dob" class="form-label ps-1">Date of Birth<span class="asterisk">*</span></label>
+            <input type="date" class="form-control" id="dob" formControlName="dateOfBirth" />
+            <span class="error" *ngIf="stepOneForm.controls['dateOfBirth'].hasError('required') && formRef.submitted">
+              Please enter date of birth
+            </span>
+          </div>
+        </div>
+        <!-- Gender && Phone Number-->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="gender" class="form-label ps-1">Gender<span class="asterisk">*</span></label>
+            <select class="form-select" formControlName="gender" aria-label="Default select example">
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error" *ngIf="stepOneForm.controls['gender'].hasError('required') && formRef.submitted">
+              Please select gender
+            </span>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="phnNumber" class="form-label ps-1">Phone No.<span class="asterisk">*</span></label>
+            <input type="text" class="form-control" id="phnNumber" formControlName="phoneNumber" placeholder="Enter Phone No." />
+            <span class="error" *ngIf="(stepOneForm.controls['phoneNumber'].hasError('required')
+                                     || stepOneForm.controls['phoneNumber'].hasError('pattern')
+                                     || stepOneForm.controls['phoneNumber'].hasError('minlength')
+                                     || stepOneForm.controls['phoneNumber'].hasError('maxlength')) && formRef.submitted">
+              Phone number must be a 10-digit number
+            </span>
+          </div>
+        </div>
+        <!-- Secondary Phone Number && Email Address-->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="secondryNumber" class="form-label ps-1">Secondary Phone Number</label>
+            <input type="text" class="form-control" id="secondryNumber" formControlName="secondryNumber" placeholder="Enter Secondary Phone No." />
+            <span class="error" *ngIf="(stepOneForm.controls['phoneNumber'].hasError('pattern')
+                                     || stepOneForm.controls['secondryNumber'].hasError('minlength')
+                                     || stepOneForm.controls['secondryNumber'].hasError('maxlength')) && formRef.submitted">
+              Phone number must be a 10-digit number
+            </span>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="emailAddress" class="form-label ps-1">Email Address<span class="asterisk">*</span></label>
+            <input type="email" class="form-control" id="emailAddress" formControlName="emailAddress" placeholder="Enter Email Address" />
+            <span class="error" *ngIf="(stepOneForm.controls['emailAddress'].hasError('required') 
+                                      || stepOneForm.controls['emailAddress'].hasError('email')
+                                      || stepOneForm.controls['emailAddress'].hasError('restrictedDomain')) 
+                                      && formRef.submitted">
+              Please enter email, example : abc&#64;gmail.com
+            </span>
+          </div>
+        </div>
+        <!-- Country && State -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="country" class="form-label ps-1">Country<span class="asterisk">*</span></label>
+            <select class="form-select" formControlName="country">
+              <option value="">Select Country</option>
+              <option *ngFor="let country of countries" [value]="country.country_name">{{ country.country_name }}</option>
+            </select>
+            <span class="error" *ngIf="stepOneForm.controls['country'].hasError('required') && formRef.submitted">
+              Please select country
+            </span>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="state" class="form-label ps-1">State<span class="asterisk">*</span></label>
+            <select class="form-select" formControlName="state" >
+              <option value="">Select State</option>
+              <option *ngFor="let state of states" [value]="state.state_name">{{ state.state_name }}</option>
+            </select>
+            <span class="error" *ngIf="stepOneForm.controls['state'].hasError('required') && formRef.submitted">
+              Please select state
+            </span>
+          </div>
+        </div>
+        <!-- City && Street Address -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="city" class="form-label ps-1">City<span class="asterisk">*</span></label>
+            <select id="city" name="city" class="form-select" formControlName="city" aria-label="Default select example">
+              <option value="">Select a City</option>
+              @for (city of cities; track $index) {
+              <option [value]="city.city_name">{{ city.city_name }}</option>
+              }
+            </select>
+            <span class="error" *ngIf=" stepOneForm.controls['city'].hasError('required') && formRef.submitted">Please select city</span>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="streetAddress" class="form-label ps-1">Street Address<span class="asterisk">*</span></label>
+            <input type="text" class="form-control" id="streetAddress" formControlName="streetAddress" placeholder="Enter Street Address" />
+            <span class="error" *ngIf=" stepOneForm.controls['streetAddress'].hasError('required') && formRef.submitted">Please enter street address</span>
+          </div>
+        </div>
+        <!-- Address Line 2 && Postal Code/ZIP Code -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="addressLine2" class="form-label ps-1">Address Line 2</label>
+            <input type="text" class="form-control" id="addressLine2" formControlName="addressLine2" placeholder="Enter Address Line 2" />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="postalCode" class="form-label ps-1">Postal Code/ZIP Code<span class="asterisk">*</span></label>
+            <input type="text" class="form-control" id="postalCode" formControlName="postalCode" placeholder="Enter Postal Code/ZIP Code" />
+            <span class="error" *ngIf="(stepOneForm.controls['postalCode'].hasError('required')
+                                    || stepOneForm.controls['postalCode'].hasError('minlength') 
+                                    || stepOneForm.controls['postalCode'].hasError('maxlength')
+                                    || stepOneForm.controls['postalCode'].hasError('pattern')) && formRef.submitted">
+              Postal code must be a 6-digit number
+            </span>
+
+          </div>
+        </div>
+
+        <div class="button float-end">
+          <button class="button" cdkStepperNext>Next</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

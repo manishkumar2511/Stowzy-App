@@ -1,0 +1,89 @@
+/* Font styling for the entire form */
+.Storage-Space-Overview {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Style for required field asterisk */
+  .Storage-Space-Overview .asterisk {
+    color: #C14953; 
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 2px; 
+  }
+  
+  
+  /* Label Styling */
+  .Storage-Space-Overview label {
+    font-weight: 600; 
+    font-size: 14px;  
+    color: #4C4C47;  
+  }
+  
+  /* Input field styling */
+  .Storage-Space-Overview input{
+    font-size: 16px;  
+    font-weight: 400; 
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Placeholder size */
+  .Storage-Space-Overview input::placeholder,
+  .Storage-Space-Overview select.form-select {
+    font-size: 14px; 
+  }
+  
+  
+  /* Error Message Styling */
+  .Storage-Space-Overview .error {
+    font-size: 12px;   
+    color: #C14953;   
+    display: block;
+    margin-top: 7px;
+  
+  }
+  
+  /* Button styling */
+  .Storage-Space-Overview .btn-types {
+    font-weight: 500; 
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #2D2D2A; 
+    color: #fff;    
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .Storage-Space-Overview .btn-types:hover {
+    background-color: #4C4C47; 
+  }
+
+
+  /* step-two.component.css */
+.selectize-input {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+.selectize-dropdown {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+  
+  
+
+
+  

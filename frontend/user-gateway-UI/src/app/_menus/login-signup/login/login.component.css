@@ -55,7 +55,7 @@
 .left_side span {
   font-size: 1.2rem;
   font-family: "Times New Roman", Times, serif;
-  color: #848FA5;
+  color: #848fa5;
 }
 
 .left_side .stowzy_content .stowzy_content_mobile {
@@ -75,7 +75,7 @@
   justify-content: center;
 }
 
-form {
+.section-login .main_Containt .right_side .userLoginForm {
   width: 100%;
   max-width: 400px;
   background-color: rgba(255, 255, 255, 0.174);
@@ -83,7 +83,7 @@ form {
   border-radius: 10px;
 }
 
-form h3 {
+.section-login .main_Containt .right_side .userLoginForm h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: black;
@@ -92,7 +92,7 @@ form h3 {
   font-weight: 600;
 }
 
-form .form-control {
+.section-login .main_Containt .right_side .userLoginForm .form-control {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
@@ -101,12 +101,12 @@ form .form-control {
   transition: all 0.3s ease;
 }
 
-form input:focus {
+.section-login .main_Containt .right_side .userLoginForm input:focus {
   border-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
-form button {
+.section-login .main_Containt .right_side .userLoginForm button {
   width: 100%;
   padding: 12px;
   background-color: #007bff;
@@ -118,46 +118,69 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
-  background-color: #0056b3;
+.section-login .main_Containt .right_side .userLoginForm button:hover {
+  background-color: var(--secondary-color);
+}
+.section-login .main_Containt .right_side .userLoginForm a:hover {
+  color: var(--secondary-color);
 }
 
-form .stowzy_sign_up_account {
+.section-login
+  .main_Containt
+  .right_side
+  .userLoginForm
+  .stowzy_sign_up_account {
   text-align: center;
   margin-top: 10px;
   font-size: 0.9rem;
   color: black;
 }
 
-form p a {
+.section-login .main_Containt .right_side .userLoginForm p a {
   color: #007bff;
   text-decoration: none;
 }
 
-form p a:hover {
+.section-login .main_Containt .right_side .userLoginForm p a:hover {
   text-decoration: underline;
+  color: var(--secondary-color);
 }
 
-form .login_corporate {
+.section-login .main_Containt .right_side .userLoginForm .login_corporate {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-form .login_corporate .login_corporate_left {
+.section-login
+  .main_Containt
+  .right_side
+  .userLoginForm
+  .login_corporate
+  .login_corporate_left {
   margin-bottom: 6px;
   border-bottom: 1px solid white;
   width: 26px;
   margin-right: 6px;
 }
-form .login_corporate .login_corporate_middle {
+.section-login
+  .main_Containt
+  .right_side
+  .userLoginForm
+  .login_corporate
+  .login_corporate_middle {
   width: fit-content;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.16;
   color: black;
 }
-form .login_corporate .login_corporate_right {
+.section-login
+  .main_Containt
+  .right_side
+  .userLoginForm
+  .login_corporate
+  .login_corporate_right {
   margin-bottom: 6px;
   border-bottom: 1px solid white;
   flex-grow: 1;
@@ -172,6 +195,7 @@ form .login_corporate .login_corporate_right {
 
 .login_externalLink a:hover {
   text-decoration: underline;
+  color: var(--secondary-color);
 }
 
 /* Responsive Design for Tablets and smaller screens */
@@ -207,16 +231,69 @@ form .login_corporate .login_corporate_right {
     display: block;
   }
 
-  form {
+  .section-login .main_Containt .right_side .userLoginForm {
     padding: 20px;
   }
 
-  form h3 {
+  .section-login .main_Containt .right_side .userLoginForm h3 {
     font-size: 1.5rem;
   }
 
-  form .form-control,
-  form button {
+  .section-login .main_Containt .right_side .userLoginForm .form-control,
+  .section-login .main_Containt .right_side .userLoginForm button {
     font-size: 0.9rem;
   }
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  #model-btn-close {
+    display: none;
+  }
+
+  .modal-title {
+    text-align: center;
+    flex-grow: 1;
+  }
+}
+.modal-header {
+  background-color: var(--primary-color);
+}
+.login-btn {
+  background-color: var(--secondary-color);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-forgot-password-model .modal-header {
+  border-color: var(--primary-color);
+}
+
+.user-forgot-password-model .modal-content .modal-body button {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.user-forgot-password-model .modal-content .modal-body button:hover {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--background-color);
+}
+
+.user-signUp-model .modal-header {
+  border-color: var(--primary-color);
+}
+
+.user-signUp-model .modal-content .modal-body button {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.user-signUp-model .modal-content .modal-body button:hover {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--background-color);
 }

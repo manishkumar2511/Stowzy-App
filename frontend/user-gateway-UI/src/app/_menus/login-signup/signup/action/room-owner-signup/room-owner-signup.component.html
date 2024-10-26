@@ -1,0 +1,78 @@
+<section class="navbar-section">
+  <div class="container">
+    <nav class="navbar navbar-expand nav-color fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/images/logos/main-logo.png"
+            class="rounded-circle"
+            alt=""
+          />
+        </a>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+<section class="image-section mt-5">
+  <div class="text-center">
+    <img src="./assets/images/rm-owner-login/rm-login-pic-1.jpg" class="img-fluid" alt="Main Image" />
+  </div>
+</section>
+<section class="stepper-form">
+  <div class="main">
+    <div class="header">
+      <h1>Angular ng-stepper </h1>
+    </div>
+  
+    <ng-stepper #cdkStepper [linear]="true">
+      <!-- <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">1</div>
+          <div class="step-title">Personal Details <span class="required">*</span></div>
+        </ng-template>
+        <app-step-one #stepOne></app-step-one>
+      </cdk-step> -->
+  
+      <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">2</div>
+          <div class="step-title">Storage Space Overview <span class="required">*</span></div>
+        </ng-template>
+        <app-step-two #stepTwo></app-step-two>
+      </cdk-step>
+  
+      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">3</div>
+          <div class="step-title">Payment Information <span class="required">*</span></div>
+        </ng-template>
+        <app-step-three #stepThree></app-step-three>
+      </cdk-step>
+  
+      <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">4</div>
+          <div class="step-title">Contact Information</div>
+        </ng-template>
+        <app-step-four #stepFour></app-step-four>
+      </cdk-step>
+    </ng-stepper>
+  </div>
+  
+</section>

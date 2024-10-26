@@ -3,7 +3,11 @@
     <nav class="navbar navbar-expand nav-color fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="./assets/images/logos/main-logo.png" class="rounded-circle" alt="">
+          <img
+            src="./assets/images/logos/main-logo.png"
+            class="rounded-circle"
+            alt=""
+          />
         </a>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -12,7 +16,13 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Login</a>
+            <a
+              class="nav-link active"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              >Login</a
+            >
           </li>
         </ul>
       </div>
@@ -21,13 +31,13 @@
 </section>
 
 <section class="owner-welcome-section">
- <div class="mt-5">
-  <img
-  src="./assets/images/rm-owner-login/rm-login-pic-1.jpg"
-  class="img-fluid"
-  alt="Room Owner Welcome"
-/>
- </div>
+  <div class="mt-5">
+    <img
+      src="./assets/images/rm-owner-login/rm-login-pic-1.jpg"
+      class="img-fluid"
+      alt="Room Owner Welcome"
+    />
+  </div>
   <div class="container">
     <div class="row main-content bg-light">
       <div class="left-cell col-md-6 d-none d-md-block">
@@ -212,10 +222,11 @@
   <div class="container">
     <div class="row">
       <!-- Brand & Motto -->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6 mb-3">
         <h5 class="text-uppercase mb-3">Stowzy</h5>
         <p>
-          Discover more, worry less. Stowzy connects you with safe and reliable storage solutions wherever you go. 
+          Discover more, worry less. Stowzy connects you with safe and reliable
+          storage solutions wherever you go.
         </p>
         <p>
           <strong>Your journey, our care.</strong>
@@ -223,7 +234,7 @@
       </div>
 
       <!-- Quick Navigation -->
-      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="col-lg-2 col-md-6 mb-3">
         <h5 class="text-uppercase mb-3">Explore</h5>
         <ul class="list-unstyled">
           <li><a href="#" class="text-light">Home</a></li>
@@ -234,7 +245,7 @@
       </div>
 
       <!-- More Links -->
-      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="col-lg-2 col-md-6 mb-3">
         <h5 class="text-uppercase mb-3">Need Help?</h5>
         <ul class="list-unstyled">
           <li><a href="#" class="text-light">FAQs</a></li>
@@ -245,19 +256,28 @@
       </div>
 
       <!-- Contact Section -->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6 mb-3">
         <h5 class="text-uppercase mb-3">Get in Touch</h5>
         <p><i class="fas fa-phone-alt mr-2"></i> +1 234 567 890</p>
         <p><i class="fas fa-envelope mr-2"></i> support&#64;stowzy.com</p>
-        <p><i class="fas fa-map-marker-alt mr-2"></i> 123 Stowzy St, City, Country</p>
+        <p>
+          <i class="fas fa-map-marker-alt mr-2"></i> 123 Stowzy St, City,
+          Country
+        </p>
       </div>
 
       <!-- Social Media Links -->
-      <div class="col-lg-2 col-md-6 mb-4 text-center text-md-left">
+      <div class="col-lg-2 col-md-6 mb-3 text-center text-md-left">
         <h5 class="text-uppercase mb-3">Follow Us</h5>
-        <a href="#" class="text-light mr-3"><i class="fab fa-facebook fa-lg"></i></a>
-        <a href="#" class="text-light mr-3"><i class="fab fa-twitter fa-lg"></i></a>
-        <a href="#" class="text-light mr-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" class="text-light mr-3"
+          ><i class="fab fa-facebook fa-lg"></i
+        ></a>
+        <a href="#" class="text-light mr-3"
+          ><i class="fab fa-twitter fa-lg"></i
+        ></a>
+        <a href="#" class="text-light mr-3"
+          ><i class="fab fa-instagram fa-lg"></i
+        ></a>
         <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a>
       </div>
     </div>
@@ -265,7 +285,7 @@
     <!-- Footer Bottom -->
     <div class="row">
       <div class="col text-center">
-        <hr class="border-light">
+        <hr class="border-light" />
         <p class="mb-0">&copy; 2024 Stowzy. All Rights Reserved.</p>
         <small>Made with ❤️ for travelers and room owners worldwide.</small>
       </div>
@@ -273,5 +293,223 @@
   </div>
 </section>
 
+<section class="login-model">
+  <div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+    aria-labelledby="loginModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-white">
+          <h5 class="modal-title" id="loginModalLabel">Login to Stowzy</h5>
+          <button
+            type="button"
+            id="model-btn-close"
+            class="btn-close d-none d-md-block"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
 
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your mobile No"
+                required
+              />
+            </div>
 
+            <div class="form-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div class="form-group d-flex justify-content-between mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="rememberMeCheck"
+                />
+                <label class="form-check-label" for="rememberMeCheck"
+                  >Remember Me</label
+                >
+              </div>
+              <div>
+                <a
+                  class="text-primary"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#forgotPasswordModal"
+                  >Forgot Password</a
+                >
+              </div>
+            </div>
+
+            <button type="submit" class="btn login-btn w-100 mb-3">
+              Login
+            </button>
+
+            <p class="text-center">
+              Don't have an account?
+              <a href="/room-owner-signup" class="text-primary">Sign Up</a>
+            </p>
+          </form>
+        </div>
+
+        <div class="text-center mb-3">
+          <button
+            type="button"
+            id="model-btn-close1"
+            class="btn btn-secondary d-md-none"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="forgot-password-model">
+  <div
+    class="modal fade"
+    id="forgotPasswordModal"
+    tabindex="-1"
+    aria-labelledby="forgotPasswordModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-white">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">
+            Forgot Password
+          </h5>
+          <button
+            type="button"
+            id="model-btn-close"
+            class="btn-close d-none d-md-block"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form>
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="emailAddress" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="emailAddress"
+                class="form-control"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+            <!-- OTP Button and Input (Email) -->
+            <div class="mt-2">
+              <div class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary w-50"
+                  id="emailOtpBtn"
+                >
+                  Get email OTP
+                </button>
+                <input
+                  type="text"
+                  id="emailOtp"
+                  maxlength="4"
+                  minlength="4"
+                  class="form-control w-50 ms-1"
+                  placeholder="Enter email OTP"
+                />
+              </div>
+            </div>
+            <!-- Mobile Number Input -->
+            <div class="form-group mt-3">
+              <label for="mobileNumber" class="form-label">Mobile Number</label>
+              <input
+                type="text"
+                id="mobileNumber"
+                class="form-control"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+            <!-- Mobile OTP Button and Input -->
+            <div class="mt-2">
+              <div class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary w-50"
+                  id="mobileOtpBtn"
+                >
+                  Get Mobile OTP
+                </button>
+                <input
+                  type="text"
+                  id="mobileOtp"
+                  class="form-control w-50 ms-1"
+                  placeholder="Enter mobile OTP"
+                />
+              </div>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group mt-2">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <!-- Confirm Password Input -->
+            <div class="form-group mt-2">
+              <label for="cnfmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="cnfmPassword"
+                class="form-control"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-outline-primary w-100 mt-2">
+              Reset Password
+            </button>
+          </form>
+        </div>
+        <!-- Close Button for Small Screens -->
+        <div class="text-center mb-3">
+          <button
+            type="button"
+            id="model-btn-close1"
+            class="btn btn-secondary d-md-none"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,6 @@
 .rounded-circle {
     max-height: 50px;
   }
-  
+  .navbar{
+    background-color: var(--primary-color);
+  }

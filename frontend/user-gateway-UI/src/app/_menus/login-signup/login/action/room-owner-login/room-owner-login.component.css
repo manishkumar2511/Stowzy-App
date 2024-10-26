@@ -1,55 +1,53 @@
 /* Section 1 - Navbar */
-
 .rounded-circle {
   max-height: 45px;
-  /* border-radius: 1px solid red !important; */
 }
 
 .navbar-section {
-  background-color: var(--primary-color); 
+  background-color: var(--primary-color);
 }
 .nav-color {
-  background-color:var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .navbar-section .navbar-brand {
   font-size: 1.5em;
-  color: #fff; 
+  color: #fff;
 }
 
 .navbar-section .nav-link {
   font-size: 1.1em;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
 }
 
 .navbar-section .nav-link.active {
-  color: #fff; 
+  color: #fff;
 }
 
 /* Section 2 - Room Owners Welcome */
 .owner-welcome-section {
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
 }
 
 .owner-welcome-section .text-heading {
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .owner-welcome-section .text-para {
-  color: var(--text-color); 
+  color: var(--text-color);
 }
 
 /* Section 3 - Unlock Your Space's Potential */
 .space-potential-section {
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
 }
 
 .space-potential-section .text-heading {
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .space-potential-section .text-para {
-  color: var(--text-color); 
+  color: var(--text-color);
 }
 
 .space-potential-section img {
@@ -69,13 +67,13 @@
 .text-heading {
   font-weight: bold;
   font-size: 2.5em;
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .text-para {
   font-size: 1.2em;
   line-height: 1.5;
-  color: var(--text-color); 
+  color: var(--text-color);
 }
 
 .responsive-img {
@@ -88,61 +86,16 @@
   height: auto;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .text-heading {
-    font-size: 1.8em;
-  }
-
-  .text-para {
-    font-size: 1em;
-  }
-
-  .text-container {
-    padding: 2rem;
-  }
-
-  .main-content {
-    flex-direction: column;
-  }
-
-  .cities-heading h3 {
-    font-size: 1.5rem;
-  }
-
-  .image-container img {
-    width: 250px;
-    height: 150px;
-  }
-
-  .city-name {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 768px) {
-  .main-content {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 576px) {
-  .text-container {
-    padding: 1.5rem;
-  }
-}
-
 /* Our Popular Cities */
 .popular-cities-section {
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
   padding: 40px 20px;
 }
 
 .cities-heading h3 {
   text-align: center;
   font-size: 2rem;
-  color: var(--primary-color); 
+  color: var(--primary-color);
   margin-bottom: 30px;
   font-weight: bold;
 }
@@ -204,21 +157,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .cities-heading h3 {
-    font-size: 1.25rem;
-  }
-
-  .image-container img {
-    width: 200px;
-    height: 120px;
-  }
-
-  .city-name {
-    font-size: 12px;
-  }
-}
-
 /* Benefits Section */
 #benefits {
   background-color: var(--background-color);
@@ -258,22 +196,7 @@
   color: var(--text-color);
 }
 
-/* Media Queries */
-@media (max-width: 576px) {
-  #benefits h2 {
-    font-size: 1.8rem;
-  }
-
-  .card-title {
-    font-size: 1.3rem;
-  }
-
-  .card-text {
-    font-size: 1rem;
-  }
-}
-/* exploremore_footer */
-
+/* Explore More Footer */
 .footer {
   background-color: var(--primary-color);
   color: var(--background-color);
@@ -298,15 +221,133 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* Styling the Modal Header */
+.modal-header {
+  background-color: var(--primary-color);
+}
+.login-btn {
+  background-color: var(--secondary-color);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+  .text-heading {
+    font-size: 1.8em;
+  }
+
+  .text-para {
+    font-size: 1em;
+  }
+
+  .text-container {
+    padding: 2rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .cities-heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .image-container img {
+    width: 250px;
+    height: 150px;
+  }
+
+  .city-name {
+    font-size: 14px;
+  }
+
   .footer .text-center {
     text-align: center !important;
   }
+
   .footer .text-md-left {
     text-align: center;
   }
+
   .footer .d-flex {
     justify-content: center;
   }
+
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  #model-btn-close {
+    display: none;
+  }
+
+  .modal-title {
+    text-align: center;
+    flex-grow: 1;
+  }
 }
+
+@media (min-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #model-btn-close1 {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-container {
+    padding: 1.5rem;
+  }
+
+  #benefits h2 {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cities-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .image-container img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .city-name {
+    font-size: 12px;
+  }
+}
+
+.forgot-password-model .modal-header {
+  border-color: var(--primary-color);
+}
+
+.forgot-password-model .modal-content .modal-body button {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.forgot-password-model .modal-content .modal-body button:hover {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--background-color);
+}
+
