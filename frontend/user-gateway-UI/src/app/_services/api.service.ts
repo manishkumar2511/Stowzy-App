@@ -54,8 +54,8 @@ export class ApiService {
     return this.httpClient.get(url);
   }
 
-  getDistricts(countryCode: string): Observable<any> {
-    const url = `${this.baseUrl}/searchJSON?country=${countryCode}&featureCode=ADM2&maxRows=1000&username=${this.username}`;
+  getDistricts(stateGeonameId: number): Observable<any> {
+    const url = `${this.baseUrl}/childrenJSON?geonameId=${stateGeonameId}&username=${this.username}`;
     return this.httpClient.get(url);
   }
 }

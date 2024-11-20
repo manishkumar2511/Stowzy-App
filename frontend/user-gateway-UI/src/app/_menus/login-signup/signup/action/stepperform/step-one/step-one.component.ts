@@ -38,13 +38,7 @@ export class StepOneComponent implements OnInit {
       gender: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
       secondryNumber: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
-      emailAddress: ['', [Validators.required, Validators.email, this._apiService.emailValidator()]],
-      country: ['', Validators.required],
-      state: ['', Validators.required],
-      city: ['', Validators.required],
-      streetAddress: ['', Validators.required],
-      addressLine2: [''],
-      postalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
+      email: ['', [Validators.required, Validators.email, this._apiService.emailValidator()]],
 
     });
   }
