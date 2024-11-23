@@ -26,31 +26,32 @@
 </section>
 <section class="stepper-form">
   <div class="main">
-    <div class="header">
-      <h1>Angular ng-stepper </h1>
+    <div class="header text-center my-2">
+      <h1>Room Owner Registration</h1>
+      <p class="text-muted">Complete the steps below to register as a room owner on Stowzy.</p>
     </div>
   
     <ng-stepper #cdkStepper [linear]="true">
-      <!-- <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
+      <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">
         <ng-template cdkStepLabel>
-          <div class="step-bullet">1</div>
-          <div class="step-title">Personal Details <span class="required">*</span></div>
+          <div class="step-bullet"><i class="fa-solid fa-address-card"></i></div>
+          <div class="step-title">Personal Details</div>
         </ng-template>
         <app-step-one #stepOne></app-step-one>
-      </cdk-step> -->
+      </cdk-step>
   
-      <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">
+      <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">
         <ng-template cdkStepLabel>
-          <div class="step-bullet">2</div>
-          <div class="step-title">Storage Space Overview <span class="required">*</span></div>
+          <div class="step-bullet"><i class="fa-solid fa-hotel"></i></div>
+          <div class="step-title">Storage Details</div>
         </ng-template>
         <app-step-two #stepTwo></app-step-two>
       </cdk-step>
   
-      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">
+      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">
         <ng-template cdkStepLabel>
-          <div class="step-bullet">3</div>
-          <div class="step-title">Payment Information <span class="required">*</span></div>
+          <div class="step-bullet"><i class="fa-solid fa-file"></i></div>
+          <div class="step-title">Upload Documents</div>
         </ng-template>
         <app-step-three #stepThree></app-step-three>
       </cdk-step>

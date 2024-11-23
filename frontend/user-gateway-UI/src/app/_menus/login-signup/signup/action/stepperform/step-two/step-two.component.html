@@ -1,60 +1,30 @@
-<!-- <div class="container">
-    <form [formGroup]="stepTwoForm"
-          (ngSubmit)="stepTwoSubmit()"
-          autocomplete="off"
-          novalidate
-          #formRef="ngForm">
-  
-      <div class="input">
-        <label for="city">City </label>
-        <input type="text" id="city" placeholder="Enter City" formControlName="city"/>
-      </div>
-  
-      <div class="input">
-        <label for=securityMeasures"country">Country </label>
-        <input type="text" id="country" placeholder="Enter Country" formControlName="country"/>
-      </div>
-  
-      <div class="buttons">
-        <div class="button">
-          <button class="button previous" cdkStepperPrevious>Previous</button>
-        </div>
-        <div class="button">
-          <button class="button" cdkStepperNext>Next</button>
-        </div>
-      </div>
-    </form>
-  </div> -->
-
-
-
 <div class="container p-0">
   <div class="card">
     <div class="card-header bg-dark text-white text-center p-4">
-      <h2 class="mb-0">Storage Space Overview</h2>
+      <h2 class="mb-0">Storage Details</h2>
     </div>
     <div class="card-body p-3 bg-light">
       <form [formGroup]="stepTwoForm" (ngSubmit)="stepTwoSubmit()" autocomplete="off" novalidate #formRef="ngForm" class="Storage-Space-Overview">
 
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="propertyName" class="form-label ps-1">Property Name<span class="asterisk">*</span></label>
-            <input type="text" class="form-control" id="propertyName" formControlName="propertyName" placeholder="Enter property name" />
-            <span class="error" *ngIf="stepTwoForm.controls['propertyName'].hasError('required') && formRef.submitted">Please enter the property name</span>
-            <span class="error" *ngIf="stepTwoForm.controls['propertyName'].hasError('maxlength') && formRef.submitted">
+            <label for="businessName" class="form-label ps-1">Business Name<span class="asterisk">*</span></label>
+            <input type="text" class="form-control" id="businessName" formControlName="businessName" placeholder="Enter business name" />
+            <span class="error" *ngIf="stepTwoForm.controls['businessName'].hasError('required') && formRef.submitted">Please enter the business name</span>
+            <span class="error" *ngIf="stepTwoForm.controls['businessName'].hasError('maxlength') && formRef.submitted">
               Property name cannot exceed 40 characters
             </span>
           </div>
           <div class="col-md-6 mb-1">
-            <label for="propertyType" class="form-label ps-1">Property Type<span class="asterisk">*</span></label>
-            <select class="form-select" formControlName="propertyType">
-              <option value="">Select property type</option>
-              <option *ngFor="let propertyType of ['Room', 'Locker', 'Warehouse']" [value]="propertyType">
-                {{ propertyType }}
+            <label for="businessType" class="form-label ps-1">Business Type<span class="asterisk">*</span></label>
+            <select class="form-select" formControlName="businessType">
+              <option value="">Select business type</option>
+              <option *ngFor="let businessType of ['Room', 'Locker', 'Warehouse']" [value]="businessType">
+                {{ businessType }}
               </option>
             </select>
-            <span class="error" *ngIf="stepTwoForm.controls['propertyType'].hasError('required') && formRef.submitted">
-              Please select the property type
+            <span class="error" *ngIf="stepTwoForm.controls['businessType'].hasError('required') && formRef.submitted">
+              Please select the business type
             </span>
           </div>
         </div>

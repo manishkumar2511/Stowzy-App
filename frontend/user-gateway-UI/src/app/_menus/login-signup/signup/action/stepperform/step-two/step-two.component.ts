@@ -59,8 +59,8 @@ export class StepTwoComponent implements OnInit {
 
   private initializeForm(): void {
     this.stepTwoForm = this._fb.group({
-      propertyName: ['', [Validators.required, Validators.maxLength(40)]],
-      propertyType: ['', Validators.required],
+      businessName: ['', [Validators.required, Validators.maxLength(40)]],
+      businessType: ['', Validators.required],
       noOfRooms: ['', [Validators.required, Validators.min(1), Validators.max(99)]],
       roomSize: ['', Validators.required],
       securityMeasures: ['', Validators.required],

@@ -1,0 +1,38 @@
+<div class="fileUploadMain">
+  @if(selectionMode == 'single'){
+  <!-- Single File Upload -->
+  <div class="upload-section">
+    <div class="upload-area">
+      <input type="file" id="singleFileUpload" class="form-control" [accept]="'*/*'"  (change)="handleSingleFileUpload($event)" />
+    </div>
+    <div class="preview mt-3" *ngIf="isPreview && singleFilePreview">
+      <div class="preview-item position-relative">
+        <img [src]="singleFilePreview" alt="Single File Preview" class="img-thumbnail preview-img" />
+        <button type="button" class="btn btn-danger btn-sm cancel-btn" (click)="removeSingleFile()">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+  @else{
+  <!-- Multiple File Upload -->
+  <div class="document-upload-container">
+    <div class="upload-multiple-section">
+      <div class="upload-area">
+        <input type="file" id="multipleFileUpload" class="form-control" accept="image/*" multiple (change)="handleMultipleFileUpload($event)" />
+      </div>
+      <div class="preview-wrapper" *ngIf="multipleFilePreviews.length > 0">
+        <div class="preview-container">
+          <div class="preview-item position-relative" *ngFor="let preview of multipleFilePreviews; let i = index">
+            <img [src]="preview" alt="File Preview" class="img-thumbnail preview-img" />
+            <button type="button" class="btn btn-danger btn-sm cancel-btn" (click)="removeFile(i)">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

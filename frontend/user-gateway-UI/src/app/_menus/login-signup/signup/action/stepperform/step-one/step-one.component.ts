@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'app-step-one',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, CdkStepperModule,],
+  imports: [ReactiveFormsModule, CommonModule, CdkStepperModule],
   templateUrl: './step-one.component.html',
   styleUrls: ['./step-one.component.css'],
 })

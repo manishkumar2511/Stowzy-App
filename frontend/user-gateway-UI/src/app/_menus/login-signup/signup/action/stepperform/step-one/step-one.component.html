@@ -48,7 +48,7 @@
         </div>
         <!-- Gender && Phone Number-->
         <div class="row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-1">
             <label for="gender" class="form-label ps-1">Gender<span class="asterisk">*</span></label>
             <select class="form-select" formControlName="gender" aria-label="Default select example">
               <option value="">Select Gender</option>
@@ -61,7 +61,7 @@
             </span>
           </div>
 
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-1">
             <label for="phnNumber" class="form-label ps-1">Phone No.<span class="asterisk">*</span></label>
             <input type="text" class="form-control" id="phnNumber" formControlName="phoneNumber" placeholder="Enter Phone No." />
             <span class="error" *ngIf="(stepOneForm.controls['phoneNumber'].hasError('required')
@@ -74,7 +74,7 @@
         </div>
         <!-- Secondary Phone Number && Email Address-->
         <div class="row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-1">
             <label for="secondryNumber" class="form-label ps-1">Secondary Phone Number</label>
             <input type="text" class="form-control" id="secondryNumber" formControlName="secondryNumber" placeholder="Enter Secondary Phone No." />
             <span class="error" *ngIf="(stepOneForm.controls['phoneNumber'].hasError('pattern')
@@ -84,7 +84,7 @@
             </span>
           </div>
 
-          <div class="col-md-6 mb-3">
+          <div class="col-md-6 mb-1">
             <label for="email" class="form-label ps-1">Email Address<span class="asterisk">*</span></label>
             <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter Email Address" />
             <span class="error" *ngIf="(stepOneForm.controls['email'].hasError('required') 
