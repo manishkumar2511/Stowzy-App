@@ -1,27 +1,36 @@
 /* Section 1 - Navbar */
 .rounded-circle {
-    max-height: 45px;
-  }
-  
-  .navbar-section {
-    background-color: var(--primary-color);
-  }
-  .nav-color {
-    background-color: var(--primary-color);
-  }
-  
-  .navbar-section .navbar-brand {
-    font-size: 1.5em;
-    color: #fff;
-  }
-  
-  .navbar-section .nav-link {
-    font-size: 1.1em;
-    color: var(--secondary-color);
-  }
-  
-  .navbar-section .nav-link.active {
-    color: #fff;
-  }
+  max-height: 45px;
+}
 
-  
+.navbar-section {
+  background-color: var(--primary-color);
+}
+
+.nav-color {
+  background-color: var(--primary-color);
+}
+
+.navbar-section .navbar-brand {
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.navbar-section .nav-link {
+  font-size: 1.1em;
+  color: var(--secondary-color);
+}
+
+.navbar-section .nav-link.active {
+  color: #fff;
+}
+
+.step-title {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .step-title {
+    display: none;
+  }
+}
