@@ -30,7 +30,7 @@
       <h1>Room Owner Registration</h1>
       <p class="text-muted">Complete the steps below to register as a room owner on Stowzy.</p>
     </div>
-  
+
     <ng-stepper #cdkStepper [linear]="true">
       <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">
         <ng-template cdkStepLabel>
@@ -39,7 +39,7 @@
         </ng-template>
         <app-step-one #stepOne></app-step-one>
       </cdk-step>
-  
+
       <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">
         <ng-template cdkStepLabel>
           <div class="step-bullet"><i class="fa-solid fa-hotel"></i></div>
@@ -47,7 +47,7 @@
         </ng-template>
         <app-step-two #stepTwo></app-step-two>
       </cdk-step>
-  
+
       <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">
         <ng-template cdkStepLabel>
           <div class="step-bullet"><i class="fa-solid fa-file"></i></div>
@@ -55,7 +55,7 @@
         </ng-template>
         <app-step-three #stepThree></app-step-three>
       </cdk-step>
-  
+
       <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">
         <ng-template cdkStepLabel>
           <div class="step-bullet">4</div>
@@ -65,5 +65,5 @@
       </cdk-step>
     </ng-stepper>
   </div>
-  
+
 </section>

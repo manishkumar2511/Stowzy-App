@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-step-four',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, CdkStepperModule],
+  imports: [ReactiveFormsModule, CdkStepperModule],
   templateUrl: './step-four.component.html',
   styleUrl: './step-four.component.css',
 })
