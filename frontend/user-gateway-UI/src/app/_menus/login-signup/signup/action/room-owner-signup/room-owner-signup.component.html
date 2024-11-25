@@ -48,20 +48,12 @@
         <app-step-two #stepTwo></app-step-two>
       </cdk-step>
 
-      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">
+      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true" [state]="stepThree.state">
         <ng-template cdkStepLabel>
           <div class="step-bullet"><i class="fa-solid fa-file"></i></div>
           <div class="step-title">Upload Documents</div>
         </ng-template>
         <app-step-three #stepThree></app-step-three>
-      </cdk-step>
-
-      <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">
-        <ng-template cdkStepLabel>
-          <div class="step-bullet">4</div>
-          <div class="step-title">Contact Information</div>
-        </ng-template>
-        <app-step-four #stepFour></app-step-four>
       </cdk-step>
     </ng-stepper>
   </div>

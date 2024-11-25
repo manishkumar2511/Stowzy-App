@@ -1,6 +1,6 @@
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FileUploadComponent } from "../../../../../../_common/file-upload/file-upload.component";
 import {
   FormBuilder,
@@ -18,7 +18,9 @@ import {
 })
 export class StepThreeComponent {
   public stepThreeForm!: FormGroup;
-  stowzyImages: File[] = [];
+  state: string = '';
+  
+  StowzyImages: File[] = [];
   DocumentIdProof: File[] = [];
 
   proofOfIdentityOptions = [
@@ -34,9 +36,9 @@ export class StepThreeComponent {
 
   private initializeForm(): void {
     this.stepThreeForm = this.fb.group({
-      proofOfIdentity: ['', Validators.required],
+      ProofOfIdentity: ['', Validators.required],
       DocumentIdProof: ['', Validators.required],
-      stowzyImages: ['', Validators.required],
+      StowzyImages: ['', Validators.required],
     })
   }
 
@@ -51,17 +53,17 @@ export class StepThreeComponent {
   }
 
   handleStowzyImages(files: File[]): void {
-    this.stowzyImages = files;
-    if (this.stowzyImages.length > 0) {
-      this.stepThreeForm.controls['stowzyImages'].setValue(files);
-      this.stepThreeForm.controls['stowzyImages'].setErrors(null);
+    this.StowzyImages = files;
+    if (this.StowzyImages.length > 0) {
+      this.stepThreeForm.controls['StowzyImages'].setValue(files);
+      this.stepThreeForm.controls['StowzyImages'].setErrors(null);
     } else {
-      this.stepThreeForm.controls['stowzyImages'].setErrors({ required: true });
+      this.stepThreeForm.controls['StowzyImages'].setErrors({ required: true });
     }
   }
 
   stepThreeSubmit() {
-    debugger
+    this.state = 'done';
     console.log(this.stepThreeForm.value);
   }
 }

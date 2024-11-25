@@ -7,14 +7,14 @@
       <form [formGroup]="stepThreeForm" (ngSubmit)="stepThreeSubmit()" autocomplete="off" novalidate #formRef="ngForm" class="Upload-Documents">
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="proofOfIdentity" class="form-label ps-1">Identity Proof<span class="asterisk">*</span></label>
-            <select class="form-select" formControlName="proofOfIdentity">
+            <label for="ProofOfIdentity" class="form-label ps-1">Identity Proof<span class="asterisk">*</span></label>
+            <select class="form-select" formControlName="ProofOfIdentity">
               <option value="">Select identity proof</option>
               <option *ngFor="let proofOfIdentity of proofOfIdentityOptions" [value]="proofOfIdentity.value">
                 {{ proofOfIdentity.label }}
               </option>
             </select>
-            <span class="error" *ngIf="stepThreeForm.controls['proofOfIdentity'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepThreeForm.controls['ProofOfIdentity'].hasError('required') && formRef.submitted">
               Please select identity proof
             </span>
           </div>
@@ -29,9 +29,9 @@
 
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="stowzyImages" class="form-label ps-1">Upload Stowzy Images<span class="asterisk">*</span></label>
+            <label for="StowzyImages" class="form-label ps-1">Upload Stowzy Images<span class="asterisk">*</span></label>
             <app-file-upload (uploadedFiles)="handleStowzyImages($event)" [selectionMode]="'multiple'"></app-file-upload>
-            <span class="error" *ngIf="stepThreeForm.controls['stowzyImages'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepThreeForm.controls['StowzyImages'].hasError('required') && formRef.submitted">
               Please stowzy images
             </span>
           </div>
@@ -42,7 +42,7 @@
             <button class="button btn-types previous" cdkStepperPrevious>Previous</button>
           </div>
           <div class="button float-end">
-            <button class="button btn-types" cdkStepperNext>Next</button>
+            <button class="button btn-types" cdkStepperNext>Register</button>
           </div>
         </div>
 
