@@ -13,5 +13,6 @@ namespace user_gateway.DAL.Infrastructure.Persistence
         }
 
         public DbSet<GuestUser> GuestUsers { get; set; }
+        public DbSet<RoomOwner> RoomOwners { get; set; }
     }
 }

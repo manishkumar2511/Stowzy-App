@@ -13,6 +13,7 @@ export class FileUploadComponent {
   @Output() uploadedFiles = new EventEmitter<File[]>();
   @Input() selectionMode: 'single' | 'multiple' = 'multiple';
   @Input() isPreview: boolean = false;
+  @Input() accept: string = "'*/*'"
 
   singleFilePreview: string | null = null;
   multipleFilePreviews: string[] = [];

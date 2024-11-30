@@ -34,6 +34,21 @@ export class ApiService {
     };
   }
 
+  dateOfBirthValidator() {
+    return (control: AbstractControl) => {
+      if (control.value) {
+        const seledtedDate = new Date(control.value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0)
+        if (seledtedDate > today) {
+          return { invalidDateOfBirth: true }
+        }
+        return false
+      }
+      return null;
+    }
+  }
+
   getCountries(): Observable<any> {
     const url = `${this.baseUrl}/countryInfoJSON?username=${this.username}`;
     return this.httpClient.get(url);

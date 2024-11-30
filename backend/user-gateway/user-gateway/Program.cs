@@ -1,13 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using user_gateway.DAL.Infrastructure.Persistence;
+using user_gateway.Common.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddCors();
+builder.Services.AddApplicationService(builder.Configuration);
 
 var app = builder.Build();
 

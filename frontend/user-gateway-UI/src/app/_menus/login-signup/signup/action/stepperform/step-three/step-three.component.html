@@ -20,7 +20,7 @@
           </div>
           <div class="col-md-6 mb-1">
             <label for="DocumentIdProof" class="form-label ps-1">Upload Identity Proof<span class="asterisk">*</span></label>
-            <app-file-upload (uploadedFiles)="uploadDocumentProof($event)" [selectionMode]="'single'" [isPreview] = 'false'></app-file-upload>
+            <app-file-upload (uploadedFiles)="uploadDocumentProof($event)" [selectionMode]="'single'" [isPreview] = 'false' [accept]="'*/*'" ></app-file-upload>
             <span class="error" *ngIf="stepThreeForm.controls['DocumentIdProof'].hasError('required') && formRef.submitted">
               Please upload document
             </span>

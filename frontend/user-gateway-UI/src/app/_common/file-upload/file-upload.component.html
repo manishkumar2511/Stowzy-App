@@ -3,7 +3,7 @@
   <!-- Single File Upload -->
   <div class="upload-section">
     <div class="upload-area">
-      <input type="file" id="singleFileUpload" class="form-control" [accept]="'*/*'"  (change)="handleSingleFileUpload($event)" />
+      <input type="file" id="singleFileUpload" class="form-control" [accept]="accept"  (change)="handleSingleFileUpload($event)" />
     </div>
     <div class="preview mt-3" *ngIf="isPreview && singleFilePreview">
       <div class="preview-item position-relative">
