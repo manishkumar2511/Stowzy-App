@@ -37,7 +37,7 @@
           <div class="step-bullet"><i class="fa-solid fa-address-card"></i></div>
           <div class="step-title">Personal Details</div>
         </ng-template>
-        <app-step-one #stepOne></app-step-one>
+        <app-step-one #stepOne (formSubmitted)="onStepOneSubmit($event)"></app-step-one>
       </cdk-step>
 
       <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">

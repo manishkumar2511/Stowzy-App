@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoomOwnerService {
-  baseUrl = environment.apiUrl + 'RoomOwner/';
+  baseUrl = environment.apiUrl + 'Account/';
   constructor(private httpClient: HttpClient) { }
 
-  roomOwnerRegistration(model: RoomOwner): Observable<RoomOwner> {
+  roomOwnerRegistration(model: FormData): Observable<RoomOwner> {
     const url = `${this.baseUrl}RoomOwnerRegistration`;
     return this.httpClient.post<RoomOwner>(url, model);
   }

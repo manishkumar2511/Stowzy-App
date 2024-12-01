@@ -15,6 +15,8 @@ namespace user_gateway.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid RoomOwnerId { get; set; }
 
+        public IFormFile? ProfileImage { get; set; }
+
         public required string Title { get; set; }
 
         public required string FirstName { get; set; }
@@ -51,10 +53,8 @@ namespace user_gateway.Domain.Entities
 
         public required int PostalCode { get; set; }
 
-        public IFormFile? ProfileImage { get; set; }
+        public required string Password { get; set; }
 
         public string? Role { get; set; }
-
-       // public IFormFile? UploadedFile { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiService } from '../../../../../../_services/api.service';
 import {
   FormBuilder,
@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RoomOwnerService } from '../../../../../../_services/room-owner.service';
+import { RoomOwner } from '../../../../../../_model/RoomOwner/room-owner';
 
 @Component({
   selector: 'app-step-one',
@@ -23,7 +24,8 @@ export class StepOneComponent implements OnInit {
   public countries: any[] = [];
   public states: any[] = [];
   public cities: any[] = [];
-  private formData = new FormData();
+
+  @Output() formSubmitted = new EventEmitter<RoomOwner>();
 
   constructor(
     private _fb: FormBuilder,
@@ -52,20 +54,13 @@ export class StepOneComponent implements OnInit {
       State: ['', Validators.required],
       City: ['', Validators.required],
       PostalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
-      //UploadedFile: [null],
-      ProfileImage: ['']
+      ProfileImage: [''],
+      Password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+      ConfirmPassword: ['', [Validators.required, this._apiService.matchValues('Password')]],
     });
-  }
-
-  getFormData() {
-    if(this.stepOneForm.valid){
-      Object.keys(this.stepOneForm.controls).forEach((key) => {
-        const value = this.stepOneForm.get(key)?.value;
-        if (value !== null && value !== undefined) {
-          this.formData.append(key, value);
-        }
-      });
-    }
+    this.stepOneForm.controls['Password'].valueChanges.subscribe({
+      next: () => this.stepOneForm.controls['ConfirmPassword'].updateValueAndValidity(),
+    });
   }
 
   loadCountries() {
@@ -114,7 +109,6 @@ export class StepOneComponent implements OnInit {
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
-      debugger
       const file = input.files[0];
       this.stepOneForm.controls['ProfileImage'].setValue(file);
       if (file.type.startsWith('image/')) {
@@ -136,8 +130,17 @@ export class StepOneComponent implements OnInit {
 
   stepOneSubmit(): void {
     if (this.stepOneForm.valid) {
-      debugger
-      const formData = this.stepOneForm.value;
+      const formData1 = this.stepOneForm.value;
+      this.formSubmitted.emit(formData1);
+      
+      const formData = new FormData();
+      Object.keys(this.stepOneForm.controls).forEach((key) => {
+        const controlValue = this.stepOneForm.controls[key].value;
+        if (controlValue !== null && controlValue !== undefined) {
+          formData.append(key, controlValue);
+        }
+      });
+
       this._roomOwnerService.roomOwnerRegistration(formData).subscribe({
         next: (response) => {
           console.log('Registration successful:', response);
@@ -147,7 +150,6 @@ export class StepOneComponent implements OnInit {
         }
       });
 
-      debugger;
     } else {
       console.warn('Form is invalid. Please check the fields.');
     }

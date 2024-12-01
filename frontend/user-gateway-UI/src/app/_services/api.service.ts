@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -48,6 +48,15 @@ export class ApiService {
       return null;
     }
   }
+
+  matchValues(matchTo: string): ValidatorFn {
+    return (control: AbstractControl) => {
+      return control.value === control.parent?.get(matchTo)?.value
+        ? null
+        : { isMatching: true };
+    };
+  }
+
 
   getCountries(): Observable<any> {
     const url = `${this.baseUrl}/countryInfoJSON?username=${this.username}`;

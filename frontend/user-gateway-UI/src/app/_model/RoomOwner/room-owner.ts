@@ -18,7 +18,6 @@ export interface RoomOwner {
     State: string,
     City: string,
     PostalCode: number,
-   // UploadedFile?: File,
     ProfileImage?: string,
     Role?: string;
 }

@@ -4,6 +4,7 @@ import { NgStepperModule } from 'angular-ng-stepper';
 import { StepOneComponent } from '../stepperform/step-one/step-one.component';
 import { StepTwoComponent } from '../stepperform/step-two/step-two.component';
 import { StepThreeComponent } from '../stepperform/step-three/step-three.component';
+import { RoomOwner } from '../../../../../_model/RoomOwner/room-owner';
 
 @Component({
   selector: 'app-room-owner-signup',
@@ -18,4 +19,14 @@ import { StepThreeComponent } from '../stepperform/step-three/step-three.compone
   templateUrl: './room-owner-signup.component.html',
   styleUrl: './room-owner-signup.component.css',
 })
-export class RoomOwnerSignupComponent { }
+export class RoomOwnerSignupComponent {
+
+  constructor() {}
+
+  onStepOneSubmit(stepOneData: RoomOwner): void {
+    debugger
+    // this.combinedData = { ...this.combinedData, ...stepOneData.value };
+    console.log('Step One Data:', stepOneData);
+  }
+
+ }
