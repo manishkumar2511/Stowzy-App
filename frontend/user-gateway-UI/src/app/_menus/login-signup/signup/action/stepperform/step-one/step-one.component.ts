@@ -21,7 +21,7 @@ import { RoomOwner } from '../../../../../../_model/RoomOwner/room-owner';
 export class StepOneComponent implements OnInit {
   @Output() stepOneSubmitted = new EventEmitter<RoomOwner>();
 
-  ProfileImage: string = '/assets/images/login-user/login-user-1.jpg';
+  profileImage: string = '/assets/images/login-user/login-user-1.jpg';
   public stepOneForm!: FormGroup;
   public countries: any[] = [];
   public states: any[] = [];
@@ -41,26 +41,26 @@ export class StepOneComponent implements OnInit {
 
   private initializeForm(): void {
     this.stepOneForm = this._fb.group({
-      Title: ['', Validators.required],
-      FirstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30), Validators.pattern(/^[a-zA-Z]*$/)]],
-      LastName: [''],
-      DateOfBirth: ['', [Validators.required, this._apiService.dateOfBirthValidator()]],
-      Gender: ['', Validators.required],
-      PhoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
-      SecondryNumber: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
-      Email: ['', [Validators.required, Validators.email, this._apiService.emailValidator()]],
-      StreetAddress: ['', Validators.required],
-      Landmark: [''],
-      Country: ['', Validators.required],
-      State: ['', Validators.required],
-      City: ['', Validators.required],
-      PostalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
-      ProfileImage: [''],
-      Password: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1)]],
-      ConfirmPassword: ['', [Validators.required, this._apiService.matchValues('Password')]],
+      title: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30), Validators.pattern(/^[a-zA-Z]*$/)]],
+      lastName: [''],
+      dateOfBirth: ['', [Validators.required, this._apiService.dateOfBirthValidator()]],
+      gender: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
+      secondaryNumber: ['', [Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^[0-9]*$/)]],
+      email: ['', [Validators.required, Validators.email, this._apiService.emailValidator()]],
+      streetAddress: ['', Validators.required],
+      landmark: [''],
+      country: ['', Validators.required],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      postalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
+      profileImage: [null],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+      confirmPassword: ['', [Validators.required, this._apiService.matchValues('password')]],
     });
-    this.stepOneForm.controls['Password'].valueChanges.subscribe({
-      next: () => this.stepOneForm.controls['ConfirmPassword'].updateValueAndValidity(),
+    this.stepOneForm.controls['password'].valueChanges.subscribe({
+      next: () => this.stepOneForm.controls['confirmPassword'].updateValueAndValidity(),
     });
   }
 
@@ -111,11 +111,11 @@ export class StepOneComponent implements OnInit {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
       const file = input.files[0];
-      this.stepOneForm.controls['ProfileImage'].setValue(file);
+      this.stepOneForm.controls['profileImage'].setValue(file);
       if (file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = () => {
-          this.ProfileImage = reader.result as string;
+          this.profileImage = reader.result as string;
         };
         reader.readAsDataURL(file);
       } else {
@@ -125,8 +125,8 @@ export class StepOneComponent implements OnInit {
   }
 
   onDeleteClick(event: Event): void {
-    this.ProfileImage = '';
-    this.stepOneForm.controls['ProfileImage'].setValue(null);
+    this.profileImage = '';
+    this.stepOneForm.controls['profileImage'].setValue(null);
   }
 
   stepOneSubmit(): void {

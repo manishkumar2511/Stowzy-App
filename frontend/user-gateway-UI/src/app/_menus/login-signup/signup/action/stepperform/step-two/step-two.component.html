@@ -9,21 +9,21 @@
         <div class="row">
           <div class="col-md-6 mb-1">
             <label for="ro-st-businessName" class="form-label ps-1">Business Name<span class="asterisk">*</span></label>
-            <input type="text" class="form-control" id="ro-st-businessName" formControlName="BusinessName" placeholder="Enter business name" />
-            <span class="error" *ngIf="stepTwoForm.controls['BusinessName'].hasError('required') && formRef.submitted">Please enter the business name</span>
-            <span class="error" *ngIf="stepTwoForm.controls['BusinessName'].hasError('maxlength') && formRef.submitted">
+            <input type="text" class="form-control" id="ro-st-businessName" formControlName="businessName" placeholder="Enter business name" />
+            <span class="error" *ngIf="stepTwoForm.controls['businessName'].hasError('required') && formRef.submitted">Please enter the business name</span>
+            <span class="error" *ngIf="stepTwoForm.controls['businessName'].hasError('maxlength') && formRef.submitted">
               Property name cannot exceed 40 characters
             </span>
           </div>
           <div class="col-md-6 mb-1">
             <label for="ro-st-businessType" class="form-label ps-1">Business Type<span class="asterisk">*</span></label>
-            <select class="form-select" id="ro-st-businessType" formControlName="BusinessType">
+            <select class="form-select" id="ro-st-businessType" formControlName="businessType">
               <option value="">Select business type</option>
               <option *ngFor="let businessType of ['Room', 'Locker', 'Warehouse']" [value]="businessType">
                 {{ businessType }}
               </option>
             </select>
-            <span class="error" *ngIf="stepTwoForm.controls['BusinessType'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepTwoForm.controls['businessType'].hasError('required') && formRef.submitted">
               Please select the business type
             </span>
           </div>
@@ -32,10 +32,10 @@
         <div class="row">
           <div class="col-md-6 mb-1">
             <label for="ro-st-noOfRooms" class="form-label ps-1">Number of Rooms Available<span class="asterisk">*</span></label>
-            <input type="number" class="form-control" id="ro-st-noOfRooms" formControlName="NoOfRooms" placeholder="Enter the number of rooms" min="1" />
-            <span class="error" *ngIf="(stepTwoForm.controls['NoOfRooms'].hasError('required')
-                                        || stepTwoForm.controls['NoOfRooms'].hasError('min')
-                                        || stepTwoForm.controls['NoOfRooms'].hasError('max')) && formRef.submitted">
+            <input type="number" class="form-control" id="ro-st-noOfRooms" formControlName="noOfRooms" placeholder="Enter the number of rooms" min="1" />
+            <span class="error" *ngIf="(stepTwoForm.controls['noOfRooms'].hasError('required')
+                                      || stepTwoForm.controls['noOfRooms'].hasError('min')
+                                        || stepTwoForm.controls['noOfRooms'].hasError('max')) && formRef.submitted">
               Please specify the number of rooms (between 1 and 99).
             </span>
           </div>
@@ -55,7 +55,7 @@
                 </li>
               </ul>
             </div>
-            <span class="error" *ngIf="stepTwoForm.controls['RoomSize'].hasError('required') && formRef.submitted">Please select a room size.</span>
+            <span class="error" *ngIf="stepTwoForm.controls['roomSize'].hasError('required') && formRef.submitted">Please select a room size.</span>
           </div>
         </div>
 
@@ -80,12 +80,12 @@
                 </li>
               </ul>
             </div>
-            <span class="error" *ngIf="stepTwoForm.controls['SecurityMeasures'].hasError('required') && formRef.submitted">Please select security measures</span>
+            <span class="error" *ngIf="stepTwoForm.controls['securityMeasures'].hasError('required') && formRef.submitted">Please select security measures</span>
           </div>
           <div class="col-md-6 mb-1">
             <label for="ro-st-hourlyRentalPrice" class="form-label ps-1">Hourly Rate<span class="asterisk">*</span></label>
-            <input type="number" class="form-control" id="ro-st-hourlyRentalPrice" formControlName="HourlyRentalPrice" placeholder="Enter the Rs/hr" min="1" />
-            <span class="error" *ngIf="(stepTwoForm.controls['HourlyRentalPrice'].hasError('required')) && formRef.submitted">
+            <input type="number" class="form-control" id="ro-st-hourlyRentalPrice" formControlName="securityMeasures" placeholder="Enter the Rs/hr" min="1" />
+            <span class="error" *ngIf="(stepTwoForm.controls['securityMeasures'].hasError('required')) && formRef.submitted">
               Please specify the hourly rate for the room (between 1 and 99).
             </span>
           </div>
@@ -95,33 +95,33 @@
         <div class="row">
           <div class="col-md-6 mb-1">
             <label for="ro-st-streetAddress" class="form-label ps-1">Street Address<span class="asterisk">*</span></label>
-            <input type="text" class="form-control" id="ro-st-streetAddress" formControlName="StreetAddress" placeholder="Enter Street Address" />
-            <span class="error" *ngIf="stepTwoForm.controls['StreetAddress'].hasError('required') && formRef.submitted">Please enter street address</span>
+            <input type="text" class="form-control" id="ro-st-streetAddress" formControlName="securityMeasures" placeholder="Enter Street Address" />
+            <span class="error" *ngIf="stepTwoForm.controls['securityMeasures'].hasError('required') && formRef.submitted">Please enter street address</span>
           </div>
           <div class="col-md-6 mb-1">
             <label for="ro-st-landmark" class="form-label ps-1">Landmark</label>
-            <input type="text" class="form-control" id="ro-st-landmark" formControlName="Landmark" placeholder="Enter landmark " />
+            <input type="text" class="form-control" id="ro-st-landmark" formControlName="landmark" placeholder="Enter landmark " />
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-1">
             <label for="country" class="form-label ps-1">Country<span class="asterisk">*</span></label>
-            <select class="form-select" formControlName="Country" (change)="loadStates($event)">
+            <select class="form-select" formControlName="country" (change)="loadStates($event)">
               <option value="">Select Country</option>
               <option *ngFor="let country of countries" [value]="country.countryCode">{{ country.countryName }}</option>
             </select>
-            <span class="error" *ngIf="stepTwoForm.controls['Country'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepTwoForm.controls['country'].hasError('required') && formRef.submitted">
               Please select country
             </span>
           </div>
           <div class="col-md-6 mb-1">
             <label for="state" class="form-label ps-1">State<span class="asterisk">*</span></label>
-            <select class="form-select" formControlName="State" (change)="loadCities($event)">
+            <select class="form-select" formControlName="state" (change)="loadCities($event)">
               <option value="">Select state</option>
               <option *ngFor="let state of states" [value]="state.name">{{ state.name }}</option>
             </select>
-            <span class="error" *ngIf="stepTwoForm.controls['State'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepTwoForm.controls['state'].hasError('required') && formRef.submitted">
               Please select state
             </span>
           </div>
@@ -131,21 +131,21 @@
         <div class="row">
           <div class="col-md-6 mb-1">
             <label for="ro-st-city" class="form-label ps-1">City<span class="asterisk">*</span></label>
-            <select class="form-select" id="ro-st-city" formControlName="City">
+            <select class="form-select" id="ro-st-city" formControlName="city">
               <option value="">Select city</option>
               <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
             </select>
-            <span class="error" *ngIf="stepTwoForm.controls['City'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepTwoForm.controls['city'].hasError('required') && formRef.submitted">
               Please select state
             </span>
           </div>
           <div class="col-md-6 mb-1">
             <label for="ro-st-postalCode" class="form-label ps-1">Postal Code/ZIP Code<span class="asterisk">*</span></label>
-            <input type="text" class="form-control" id="ro-st-postalCode" formControlName="PostalCode" placeholder="Enter Postal Code/ZIP Code" />
-            <span class="error" *ngIf="(stepTwoForm.controls['PostalCode'].hasError('required')
-                                    || stepTwoForm.controls['PostalCode'].hasError('minlength') 
-                                    || stepTwoForm.controls['PostalCode'].hasError('maxlength')
-                                    || stepTwoForm.controls['PostalCode'].hasError('pattern')) && formRef.submitted">
+            <input type="text" class="form-control" id="ro-st-postalCode" formControlName="postalCode" placeholder="Enter Postal Code/ZIP Code" />
+            <span class="error" *ngIf="(stepTwoForm.controls['postalCode'].hasError('required')
+                                    || stepTwoForm.controls['postalCode'].hasError('minlength') 
+                                    || stepTwoForm.controls['postalCode'].hasError('maxlength')
+                                    || stepTwoForm.controls['postalCode'].hasError('pattern')) && formRef.submitted">
               Postal code must be a 6-digit number
             </span>
 
@@ -153,9 +153,9 @@
         </div>
 
         <div class="col-md-12 mb-1 mt-3">
-          <input type="text" for="ro-st-currentLocation" formControlName="CurrentLocation" class="form-control d-none" id="currentLocation">
+          <input type="text" for="ro-st-currentLocation" formControlName="currentLocation" class="form-control d-none" id="currentLocation">
           <button class="btn btn-primary w-100" type="button" (click)="uploadCurrentLocation()">Please upload current location</button>
-          <span class="error" *ngIf="stepTwoForm.controls['CurrentLocation'].hasError('required') && formRef.submitted">
+          <span class="error" *ngIf="stepTwoForm.controls['currentLocation'].hasError('required') && formRef.submitted">
             The room's location is required to complete this step.
           </span>
         </div>

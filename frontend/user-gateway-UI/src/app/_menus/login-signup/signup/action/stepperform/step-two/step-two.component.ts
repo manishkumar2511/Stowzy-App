@@ -62,19 +62,19 @@ export class StepTwoComponent implements OnInit {
 
   private initializeForm(): void {
     this.stepTwoForm = this._fb.group({
-      BusinessName: ['', [Validators.required, Validators.maxLength(40)]],
-      BusinessType: ['', Validators.required],
-      NoOfRooms: ['', [Validators.required, Validators.min(1), Validators.max(99)]],
-      RoomSize: ['', Validators.required],
-      SecurityMeasures: ['', Validators.required],
-      HourlyRentalPrice: ['', [Validators.required, Validators.min(1)]],
-      StreetAddress: ['', Validators.required],
-      Landmark: [''],
-      Country: ['', Validators.required],
-      State: ['', Validators.required],
-      City: ['', Validators.required],
-      PostalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
-      CurrentLocation: ['', Validators.required]
+      businessName: ['', [Validators.required, Validators.maxLength(40)]], 
+      businessType: ['', Validators.required],
+      noOfRooms: ['', [Validators.required, Validators.min(1), Validators.max(99)]], 
+      roomSize: ['', Validators.required],
+      securityMeasures: ['', Validators.required],
+      hourlyRentalPrice: ['', [Validators.required, Validators.min(1)]], 
+      streetAddress: ['', Validators.required],
+      landmark: [''],
+      country: ['', Validators.required],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      postalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]], // Changed to camel case
+      currentLocation: ['', Validators.required]
     });
   }
 
@@ -85,7 +85,7 @@ export class StepTwoComponent implements OnInit {
     } else {
       this.selectedRoomSizes = this.selectedRoomSizes.filter(value => value !== option.value);
     }
-    this.stepTwoForm.controls['RoomSize'].setValue(this.selectedRoomSizes.length > 0 ? this.selectedRoomSizes.join(', ') : null);
+    this.stepTwoForm.controls['roomSize'].setValue(this.selectedRoomSizes.length > 0 ? this.selectedRoomSizes.join(', ') : null);
   }
 
   onSecurityMeasuresChange(event: Event, option: { id: number; value: string; label: string }): void {
@@ -95,7 +95,7 @@ export class StepTwoComponent implements OnInit {
     } else {
       this.selectedSecurityMeasures = this.selectedSecurityMeasures.filter((value) => value !== option.value);
     }
-    this.stepTwoForm.controls['SecurityMeasures'].setValue(this.selectedSecurityMeasures.length > 0 ? this.selectedSecurityMeasures.join(', ') : null);
+    this.stepTwoForm.controls['securityMeasures'].setValue(this.selectedSecurityMeasures.length > 0 ? this.selectedSecurityMeasures.join(', ') : null);
   }
 
   loadCountries() {

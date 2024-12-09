@@ -8,26 +8,26 @@
         
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="IdentityProofType" class="form-label ps-1">
+            <label for="identityProofType" class="form-label ps-1">
               Identity Proof Type<span class="asterisk">*</span>
             </label>
-            <select class="form-select" formControlName="IdentityProofType">
+            <select class="form-select" formControlName="identityProofType">
               <option value="">Select identity proof</option>
               <option *ngFor="let proofOfIdentity of proofOfIdentityOptions" [value]="proofOfIdentity.value">
                 {{ proofOfIdentity.label }}
               </option>
             </select>
-            <span class="error" *ngIf="stepThreeForm.controls['IdentityProofType'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepThreeForm.controls['identityProofType'].hasError('required') && formRef.submitted">
               Please select identity proof type
             </span>
           </div>
           <div class="col-md-6 mb-1">
-            <label for="IdentityProofDocument" class="form-label ps-1">
+            <label for="identityProofDocument" class="form-label ps-1">
               Upload Identity Proof Document<span class="asterisk">*</span>
             </label>
             <app-file-upload (uploadedFiles)="uploadDocumentProof($event)" [selectionMode]="'single'" [isPreview]="false" [accept]="'.png,.jpg,.jpeg,.pdf'">
             </app-file-upload>
-            <span class="error" *ngIf="stepThreeForm.controls['IdentityProofDocument'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepThreeForm.controls['identityProofDocument'].hasError('required') && formRef.submitted">
               Please upload identity proof document
             </span>
           </div>
@@ -35,12 +35,12 @@
 
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="StowzyImages" class="form-label ps-1">
+            <label for="stowzyImages" class="form-label ps-1">
               Upload Stowzy Images<span class="asterisk">*</span>
             </label>
             <app-file-upload (uploadedFiles)="handleStowzyImages($event)" [selectionMode]="'multiple'">
             </app-file-upload>
-            <span class="error" *ngIf="stepThreeForm.controls['StowzyImages'].hasError('required') && formRef.submitted">
+            <span class="error" *ngIf="stepThreeForm.controls['stowzyImages'].hasError('required') && formRef.submitted">
               Please upload Stowzy images
             </span>
           </div>

@@ -38,10 +38,10 @@ export class StepThreeComponent {
 
   private initializeForm(): void {
     this.stepThreeForm = this.fb.group({
-      IdentityProofType: ['', Validators.required],
-      IdentityProofDocument: ['', Validators.required],
-      StowzyImages: ['', Validators.required],
-    })
+      identityProofType: ['', Validators.required],
+      identityProofDocument: ['', Validators.required],
+      stowzyImages: ['', Validators.required],
+    });
   }
 
   uploadDocumentProof(files: File[]): void {

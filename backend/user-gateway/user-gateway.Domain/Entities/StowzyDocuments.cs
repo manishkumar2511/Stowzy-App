@@ -16,6 +16,6 @@ namespace user_gateway.Domain.Entities
         public Guid DocumentId { get; set; }
         public required string IdentityProofType { get; set; }
         public required IFormFile IdentityProofDocument { get; set; }
-        public required List<IFormFile> StowzyImages { get; set; } = new List<IFormFile>();
+        public required List<IFormFile> StowzyImages { get; set; } 
     }
 }

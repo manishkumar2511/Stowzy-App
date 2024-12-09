@@ -1,6 +1,6 @@
 export interface StowzyDocuments {
-    DocumentId: string;  
-    IdentityProofType: string;    
-    IdentityProofDocument: File;    
-    StowzyImages: File[];
+    documentId: string;
+    identityProofType: string;
+    identityProofDocument: File;
+    stowzyImages: File[];
 }

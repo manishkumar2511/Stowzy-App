@@ -19,8 +19,8 @@ namespace user_gateway.Domain.Entities
         public string? LastName { get; set; }
         public required DateTime DateOfBirth { get; set; }
         public required string Gender { get; set; }
-        public required long PhoneNumber { get; set; }
-        public long? SecondryNumber { get; set; }
+        public required string PhoneNumber { get; set; }
+        public string? SecondaryNumber { get; set; }
         public required string Email { get; set; }
         public required bool IsActive { get; set; }
         public required DateTime CreatedDate { get; set; }
@@ -31,7 +31,7 @@ namespace user_gateway.Domain.Entities
         public required string Country { get; set; }
         public required string State { get; set; }
         public required string City { get; set; }
-        public required int PostalCode { get; set; }
+        public required string PostalCode { get; set; }
         public IFormFile? ProfileImage { get; set; }
         public string? Role { get; set; }
     }
