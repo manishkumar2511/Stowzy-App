@@ -19,13 +19,14 @@ import { RoomOwner } from '../../../../../../_model/RoomOwner/room-owner';
   styleUrls: ['./step-one.component.css'],
 })
 export class StepOneComponent implements OnInit {
+  @Output() stepOneSubmitted = new EventEmitter<RoomOwner>();
+
   ProfileImage: string = '/assets/images/login-user/login-user-1.jpg';
   public stepOneForm!: FormGroup;
   public countries: any[] = [];
   public states: any[] = [];
   public cities: any[] = [];
 
-  @Output() formSubmitted = new EventEmitter<RoomOwner>();
 
   constructor(
     private _fb: FormBuilder,
@@ -55,7 +56,7 @@ export class StepOneComponent implements OnInit {
       City: ['', Validators.required],
       PostalCode: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6), Validators.pattern(/^[0-9]*$/)]],
       ProfileImage: [''],
-      Password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+      Password: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(1)]],
       ConfirmPassword: ['', [Validators.required, this._apiService.matchValues('Password')]],
     });
     this.stepOneForm.controls['Password'].valueChanges.subscribe({
@@ -131,24 +132,24 @@ export class StepOneComponent implements OnInit {
   stepOneSubmit(): void {
     if (this.stepOneForm.valid) {
       const formData1 = this.stepOneForm.value;
-      this.formSubmitted.emit(formData1);
-      
-      const formData = new FormData();
-      Object.keys(this.stepOneForm.controls).forEach((key) => {
-        const controlValue = this.stepOneForm.controls[key].value;
-        if (controlValue !== null && controlValue !== undefined) {
-          formData.append(key, controlValue);
-        }
-      });
+      this.stepOneSubmitted.emit(formData1);
 
-      this._roomOwnerService.roomOwnerRegistration(formData).subscribe({
-        next: (response) => {
-          console.log('Registration successful:', response);
-        },
-        error: (error) => {
-          console.error('Registration failed:', error);
-        }
-      });
+      // const formData = new FormData();
+      // Object.keys(this.stepOneForm.controls).forEach((key) => {
+      //   const controlValue = this.stepOneForm.controls[key].value;
+      //   if (controlValue !== null && controlValue !== undefined) {
+      //     formData.append(key, controlValue);
+      //   }
+      // });
+
+      // this._roomOwnerService.roomOwnerRegistration(formData).subscribe({
+      //   next: (response) => {
+      //     console.log('Registration successful:', response);
+      //   },
+      //   error: (error) => {
+      //     console.error('Registration failed:', error);
+      //   }
+      // });
 
     } else {
       console.warn('Form is invalid. Please check the fields.');

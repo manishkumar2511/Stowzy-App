@@ -1,5 +1,5 @@
 export interface Room {
-    RoomId:string,
+    RoomId: string;
     BusinessName: string;
     BusinessType: string;
     NoOfRooms: number;

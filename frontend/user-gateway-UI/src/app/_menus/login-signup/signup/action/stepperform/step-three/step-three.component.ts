@@ -1,7 +1,8 @@
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FileUploadComponent } from "../../../../../../_common/file-upload/file-upload.component";
+import { StowzyDocuments } from '../../../../../../_model/RoomOwner/business-documents';
 import {
   FormBuilder,
   FormGroup,
@@ -17,11 +18,12 @@ import {
   styleUrl: './step-three.component.css',
 })
 export class StepThreeComponent {
+  @Output() stepThreeSubmitted = new EventEmitter<StowzyDocuments>();
+
   public stepThreeForm!: FormGroup;
   state: string = '';
-  
   StowzyImages: File[] = [];
-  DocumentIdProof: File[] = [];
+  IdentityProofDocument: File[] = [];
 
   proofOfIdentityOptions = [
     { id: 1, value: 'Aadhaar Card (India-specific)', label: "Aadhaar Card (India-specific)" },
@@ -36,19 +38,19 @@ export class StepThreeComponent {
 
   private initializeForm(): void {
     this.stepThreeForm = this.fb.group({
-      ProofOfIdentity: ['', Validators.required],
-      DocumentIdProof: ['', Validators.required],
+      IdentityProofType: ['', Validators.required],
+      IdentityProofDocument: ['', Validators.required],
       StowzyImages: ['', Validators.required],
     })
   }
 
   uploadDocumentProof(files: File[]): void {
-    this.DocumentIdProof = files;
-    if (this.DocumentIdProof.length > 0) {
-      this.stepThreeForm.controls['DocumentIdProof'].setValue(files);
-      this.stepThreeForm.controls['DocumentIdProof'].setErrors(null);
+    this.IdentityProofDocument = files;
+    if (this.IdentityProofDocument.length > 0) {
+      this.stepThreeForm.controls['IdentityProofDocument'].setValue(files);
+      this.stepThreeForm.controls['IdentityProofDocument'].setErrors(null);
     } else {
-      this.stepThreeForm.controls['DocumentIdProof'].setErrors({ required: true });
+      this.stepThreeForm.controls['IdentityProofDocument'].setErrors({ required: true });
     }
   }
 
@@ -63,7 +65,10 @@ export class StepThreeComponent {
   }
 
   stepThreeSubmit() {
-    this.state = 'done';
-    console.log(this.stepThreeForm.value);
+    if (this.stepThreeForm.valid) {
+      this.state = 'done';
+      const formData = this.stepThreeForm.value;
+      this.stepThreeSubmitted.emit(formData);
+    }
   }
 }

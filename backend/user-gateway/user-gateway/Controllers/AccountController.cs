@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using user_gateway.BLL.Application.Services.Account;
+using user_gateway.BLL.Application.Services.Account.DTOs;
 using user_gateway.Domain.Entities;
 
 namespace user_gateway.Controllers
@@ -16,12 +17,48 @@ namespace user_gateway.Controllers
             _accountService = accountService;
         }
 
-        [HttpPost("RoomOwnerRegistration")]
-        public async Task<IActionResult> RoomOwnerRegistration([FromForm] RoomOwner roomOwner)
+        //[HttpPost("roomOwnerRegistration")]
+        //public async Task<IActionResult> RoomOwnerRegistration([FromBody] RoomOwnerRegistrationDTO roomOwnerRegistration)
+        //{
+        //    if (roomOwnerRegistration == null)
+        //    {
+        //        return BadRequest("Invalid payload");
+        //    }
+
+        //    // Debugging the data received
+        //    Console.WriteLine($"Room Owner: {roomOwnerRegistration.roomOwner}");
+        //    Console.WriteLine($"Room: {roomOwnerRegistration.room}");
+        //    Console.WriteLine($"Documents: {roomOwnerRegistration.stowzyDocuments}");
+
+        //    return Ok("Data received");
+        //}
+
+        [HttpPost("roomOwnerRegistration")]
+        public async Task<IActionResult> RoomOwnerRegistration([FromForm] RoomOwnerRegistrationDTO roomOwnerRegistration)
         {
-            var result = await _accountService.RoomOwnerRegistration(roomOwner);
-            return Ok(result);
+            // Debugging to check received data
+            Console.WriteLine($"Room Owner: {roomOwnerRegistration.roomOwner?.FirstName}");
+            Console.WriteLine($"Room: {roomOwnerRegistration.room?.BusinessName}");
+            Console.WriteLine($"Document ID: {roomOwnerRegistration.stowzyDocuments?.DocumentId}");
+
+            if (roomOwnerRegistration.stowzyDocuments?.IdentityProofDocument != null)
+            {
+                var fileName = Path.GetFileName(roomOwnerRegistration.stowzyDocuments.IdentityProofDocument.FileName);
+                Console.WriteLine($"Received file: {fileName}");
+            }
+
+            if (roomOwnerRegistration.stowzyDocuments?.StowzyImages != null)
+            {
+                foreach (var imageName in roomOwnerRegistration.stowzyDocuments.StowzyImages)
+                {
+                    Console.WriteLine($"Image: {imageName}");
+                }
+            }
+
+            return Ok("Data received successfully");
         }
+
+
 
 
 

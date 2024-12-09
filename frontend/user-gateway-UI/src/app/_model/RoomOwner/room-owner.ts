@@ -5,8 +5,8 @@ export interface RoomOwner {
     LastName?: string,
     DateOfBirth: Date,
     Gender: string,
-    PhoneNumber: number,
-    SecondryNumber?: number,
+    PhoneNumber: string,
+    SecondryNumber?: string,
     Email: string,
     IsActive: boolean,
     CreatedDate: Date,
@@ -17,7 +17,7 @@ export interface RoomOwner {
     Country: string,
     State: string,
     City: string,
-    PostalCode: number,
-    ProfileImage?: string,
+    PostalCode: string,
+    ProfileImage?: File,
     Role?: string;
 }

@@ -5,34 +5,43 @@
     </div>
     <div class="card-body p-3 bg-light">
       <form [formGroup]="stepThreeForm" (ngSubmit)="stepThreeSubmit()" autocomplete="off" novalidate #formRef="ngForm" class="Upload-Documents">
+        
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="ProofOfIdentity" class="form-label ps-1">Identity Proof<span class="asterisk">*</span></label>
-            <select class="form-select" formControlName="ProofOfIdentity">
+            <label for="IdentityProofType" class="form-label ps-1">
+              Identity Proof Type<span class="asterisk">*</span>
+            </label>
+            <select class="form-select" formControlName="IdentityProofType">
               <option value="">Select identity proof</option>
               <option *ngFor="let proofOfIdentity of proofOfIdentityOptions" [value]="proofOfIdentity.value">
                 {{ proofOfIdentity.label }}
               </option>
             </select>
-            <span class="error" *ngIf="stepThreeForm.controls['ProofOfIdentity'].hasError('required') && formRef.submitted">
-              Please select identity proof
+            <span class="error" *ngIf="stepThreeForm.controls['IdentityProofType'].hasError('required') && formRef.submitted">
+              Please select identity proof type
             </span>
           </div>
           <div class="col-md-6 mb-1">
-            <label for="DocumentIdProof" class="form-label ps-1">Upload Identity Proof<span class="asterisk">*</span></label>
-            <app-file-upload (uploadedFiles)="uploadDocumentProof($event)" [selectionMode]="'single'" [isPreview] = 'false' [accept]="'*/*'" ></app-file-upload>
-            <span class="error" *ngIf="stepThreeForm.controls['DocumentIdProof'].hasError('required') && formRef.submitted">
-              Please upload document
+            <label for="IdentityProofDocument" class="form-label ps-1">
+              Upload Identity Proof Document<span class="asterisk">*</span>
+            </label>
+            <app-file-upload (uploadedFiles)="uploadDocumentProof($event)" [selectionMode]="'single'" [isPreview]="false" [accept]="'.png,.jpg,.jpeg,.pdf'">
+            </app-file-upload>
+            <span class="error" *ngIf="stepThreeForm.controls['IdentityProofDocument'].hasError('required') && formRef.submitted">
+              Please upload identity proof document
             </span>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-1">
-            <label for="StowzyImages" class="form-label ps-1">Upload Stowzy Images<span class="asterisk">*</span></label>
-            <app-file-upload (uploadedFiles)="handleStowzyImages($event)" [selectionMode]="'multiple'"></app-file-upload>
+            <label for="StowzyImages" class="form-label ps-1">
+              Upload Stowzy Images<span class="asterisk">*</span>
+            </label>
+            <app-file-upload (uploadedFiles)="handleStowzyImages($event)" [selectionMode]="'multiple'">
+            </app-file-upload>
             <span class="error" *ngIf="stepThreeForm.controls['StowzyImages'].hasError('required') && formRef.submitted">
-              Please stowzy images
+              Please upload Stowzy images
             </span>
           </div>
         </div>

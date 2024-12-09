@@ -32,12 +32,12 @@
     </div>
 
     <ng-stepper #cdkStepper [linear]="true">
-      <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
+      <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">
         <ng-template cdkStepLabel>
           <div class="step-bullet"><i class="fa-solid fa-address-card"></i></div>
           <div class="step-title">Personal Details</div>
         </ng-template>
-        <app-step-one #stepOne (formSubmitted)="onStepOneSubmit($event)"></app-step-one>
+        <app-step-one #stepOne (stepOneSubmitted)="onStepOneSubmit($event)"></app-step-one>
       </cdk-step>
 
       <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">
@@ -45,7 +45,7 @@
           <div class="step-bullet"><i class="fa-solid fa-hotel"></i></div>
           <div class="step-title">Storage Details</div>
         </ng-template>
-        <app-step-two #stepTwo></app-step-two>
+        <app-step-two #stepTwo (stepTwoSubmitted)="onStepTwoSubmit($event)"></app-step-two>
       </cdk-step>
 
       <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true" [state]="stepThree.state">
@@ -53,7 +53,7 @@
           <div class="step-bullet"><i class="fa-solid fa-file"></i></div>
           <div class="step-title">Upload Documents</div>
         </ng-template>
-        <app-step-three #stepThree></app-step-three>
+        <app-step-three #stepThree (stepThreeSubmitted)="onStepThreeSubmit($event)"></app-step-three>
       </cdk-step>
     </ng-stepper>
   </div>

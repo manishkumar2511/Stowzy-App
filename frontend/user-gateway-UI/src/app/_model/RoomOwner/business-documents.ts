@@ -1,6 +1,6 @@
-export interface BusinessDocuments {
+export interface StowzyDocuments {
     DocumentId: string;  
-    ProofOfIdentity: string;    
-    DocumentIdProof: string;    
-    StowzyImages: string[];
+    IdentityProofType: string;    
+    IdentityProofDocument: File;    
+    StowzyImages: File[];
 }

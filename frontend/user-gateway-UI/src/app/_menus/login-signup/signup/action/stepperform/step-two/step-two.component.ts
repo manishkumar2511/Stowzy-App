@@ -1,6 +1,8 @@
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, output } from '@angular/core';
+import { ApiService } from '../../../../../../_services/api.service';
+import { Room } from '../../../../../../_model/RoomOwner/room';
 
 import {
   FormBuilder,
@@ -8,7 +10,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ApiService } from '../../../../../../_services/api.service';
 
 
 @Component({
@@ -26,6 +27,8 @@ export class StepTwoComponent implements OnInit {
   public cities: any[] = [];
   selectedRoomSizes: string[] = [];
   selectedSecurityMeasures: string[] = [];
+
+  @Output() stepTwoSubmitted = new EventEmitter<Room>();
 
 
   roomSizeOptions = [
@@ -164,6 +167,10 @@ export class StepTwoComponent implements OnInit {
   }
 
   stepTwoSubmit() {
+    if (this.stepTwoForm.valid) {
+      const formData = this.stepTwoForm.value;
+      this.stepTwoSubmitted.emit(formData);
+    }
     console.log(this.stepTwoForm.value);
   }
 }
